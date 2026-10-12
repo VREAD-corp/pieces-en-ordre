@@ -1,0 +1,2216 @@
+{
+ "ci": {
+  "affaires": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Invitation",
+       "text": "Ordre de mission avec prise en charge de l'employeur ou de l'administration d'appartenance en Côte d'Ivoire, invitation d'une entreprise ou d'une autorité à participer à des conférences ou à des manifestations à caractère commercial, industriel ou professionnel."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Attestation CNPS, bulletins de salaire."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Relevés de compte bancaire, bulletins de paie, déclaration de revenus ou tout justificatif d'autres revenus."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou moyens suffisants pour couvrir les frais d'hôtel (viatique de 120 Euros/jour) ou contrat de bail ou certificat de propriété. En cas d'hébergement chez un particulier : attestation d'accueil (formulaire Cerfa)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros."
+  },
+  "famille": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "ETAT-CIVIL",
+     "items": [
+      {
+       "title": "Lien parenté hôte",
+       "text": "Le cas échéant, justificatif du lien de parenté avec l'hôte."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Salariés : Attestation CNPS, certificat de travail, attestation de congés originale. Retraités : carte de pensionné. Commerçants ou entrepreneurs : inscription au registre du commerce (authentifiée au greffe du tribunal de commerce), preuves de domicile (factures C.I.E., SODECI, CI-TELECOM). Professions libérales : carte professionnelle (journalistes....)."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Relevés bancaires des trois derniers mois, 3 derniers bulletins de salaire ou de pension. Le cas échéant, lettre de prise en charge et justificatifs de revenus et d'identité de la personne qui prend en charge."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Attestation accueil",
+       "text": "Attestation d'accueil."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros, soit environ 59 000 Franc CFA (BCEAO)."
+  },
+  "stage-etudiant": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Convention stage",
+       "text": "Convention de stage signée entre l'entreprise en France, l'établissement d'origine et le stagiaire."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Justificatifs de ressources minimum de 877,50 euros par mois, y compris montant de la gratification."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou contrat de bail ou attestation d'accueil."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 0.00 euros, soit environ 0 Franc CFA (BCEAO)."
+  },
+  "stage-salarie": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Convention stage",
+       "text": "Convention de stage signée entre l'employeur étranger, l'entreprise en France et le stagiaire."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Justificatifs de ressources équivalents au SMIC brut mensuel."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou contrat de bail ou attestation d'accueil."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros, soit environ 59 000 Franc CFA (BCEAO)."
+  },
+  "tourisme": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation voyage",
+       "text": "Confirmation de la réservation d'un voyage organisé ou tout autre document indiquant le programme envisagé."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Salariés : Attestation CNPS, certificat de travail, attestation de congés originale. Retraités : carte de pensionné. Commerçants ou entrepreneurs : inscription au registre du commerce (authentifiée au greffe du tribunal de commerce), preuves de domicile (factures C.I.E., SODECI, CI-TELECOM). Professions libérales : carte professionnelle (journalistes....)."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Relevés bancaires des trois derniers mois, 3 derniers bulletins de salaire ou de pension. Le cas échéant, lettre de prise en charge et justificatifs de revenus et d'identité de la personne qui prend en charge."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou moyens suffisants pour couvrir les frais d'hôtel (viatique de 120 Euros/jour) ou contrat de bail ou certificat de propriété. En cas d'hébergement chez un particulier : attestation d'accueil (formulaire Cerfa)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros, soit environ 59 000 Franc CFA (BCEAO)."
+  }
+ },
+ "cm": {
+  "affaires": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Invitation",
+       "text": "Justificatif de l'objet du séjour (invitation d'une entreprise ou d'une autorité à participer à des conférences ou à des manifestations à caractère commercial, industriel ou professionnel) et ordre de mission de l'employeur."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Pour les salariés, attestation d'emploi par l'employeur, pour les non salariés, tout autre justificatif d'activités professionnelles."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Relevés de compte bancaire, bulletins de paie, déclaration de revenus ou tout justificatif d'autres revenus."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou moyens suffisants pour couvrir les frais d'hôtel (viatique de 120 Euros/jour) ou contrat de bail ou certificat de propriété. En cas d'hébergement chez un particulier : attestation d'accueil (formulaire Cerfa)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros."
+  },
+  "famille": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "ETAT-CIVIL",
+     "items": [
+      {
+       "title": "Lien parenté hôte",
+       "text": "Le cas échéant, justificatif du lien de parenté avec l'hôte."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Pour les salariés, attestation d'emploi et de congés par l'employeur, pour les non salariés, tout autre justificatif d'activités professionnelles."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Trois derniers bulletins de paie (ou autres, pension, etc.), trois derniers relevés bancaires."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Attestation accueil",
+       "text": "Attestation d'accueil. Si les revenus de l'invitant ne sont pas indiqués sur l'attestation, joindre son avis d'imposition et ses 3 derniers bulletins de salaire."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros, soit environ 59 000 Franc CFA (BEAC)."
+  },
+  "stage-etudiant": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Convention stage",
+       "text": "Convention de stage signée entre l'entreprise en France, l'établissement d'origine et le stagiaire."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Justificatifs de ressources minimum de 877,50 euros par mois, y compris montant de la gratification."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou contrat de bail ou attestation d'accueil."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 0.00 euros, soit environ 0 Franc CFA (BEAC)."
+  },
+  "stage-salarie": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Convention stage",
+       "text": "Convention de stage signée entre l'employeur étranger, l'entreprise en France et le stagiaire."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Justificatifs de ressources équivalents au SMIC brut mensuel."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou contrat de bail ou attestation d'accueil."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros."
+  },
+  "tourisme": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation voyage",
+       "text": "Confirmation de la réservation d'un voyage organisé ou tout autre document indiquant le programme envisagé."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Pour les salariés, attestation d'emploi et de congés par l'employeur, pour les non salariés, tout autre justificatif d'activités professionnelles."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Trois derniers bulletins de paie (ou autres, pension, etc.), trois derniers relevés bancaires."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou moyens suffisants pour couvrir les frais d'hôtel (viatique de 120 Euros/jour) ou contrat de bail ou certificat de propriété. En cas d'hébergement chez un particulier : attestation d'accueil (formulaire Cerfa)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros, soit environ 59 000 Franc CFA (BEAC)."
+  }
+ },
+ "dz": {
+  "affaires": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas ressortissant algérien : titre de séjour algérien, valable au minimum trois mois après l'expiration du visa demandé."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Invitation",
+       "text": "Invitation professionnelle : lettre d'invitation d'e l'entreprise invitante précisant le motif de la visite et la ou les dates, accompagnée de documents justificatifs de la relation commerciale (contrats, factures, correspondances, preuves d'importation etc...)."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "La pré-réservation du billet aller-retour n'est pas requise pour les demandeurs de visas en Algérie."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Salarié : attestation d'emploi ou contrat de travail récent, attestation d'affiliation à la CNAS ou lettre explicative de l'employeur. Commerçant : justificatif d'inscription au registre du commerce, attestation d'affiliation à la CASNOS, formulaire C20 mentionnant le chiffre d'affaires et le bilan, et relevés bancaires de la société des 3 derniers mois. Agriculteurs : attestation d'exploitant agricole, carte d'agriculteur et dernière déclaration du revenu annuel. Fonctionnaires : arrêté de nomination ou attestation de fonction et dernier bulletin de salaire. Retraités : attestation de perception d'une pension de retraite. Etudiants ou mineurs : justificatifs de la situation socio-professionnelle des parents et certificat de scolarité ou carte d'étudiant. Personnes sans emploi : preuves d'une situation socio-économique adéquate (certificat de mariage, livret de famille, documents confirmant la propriété d'un bien immobilier). *Cf. autres catégories professionnelles sur la page pays."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Relevés de compte bancaire, bulletins de paie, déclaration de revenus ou tout justificatif d'autres revenus."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Attestation d'accueil, ou attestation d'hébergement fournie par l'entreprise invitante, ou réservation d'hôtel, ou preuve d'une location ou de la propriété d'un bien immobilier, ou preuve de moyens suffisants pour couvrir les frais d'hébergement (viatique de 120 euros/jour)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros."
+  },
+  "famille": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas ressortissant algérien : titre de séjour algérien, valable au minimum trois mois après l'expiration du visa demandé."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "ETAT-CIVIL",
+     "items": [
+      {
+       "title": "Lien parenté hôte",
+       "text": "Justificatif du lien de parenté avec l'hôte si possible (fiche familiale d'état civil, actes d'état civil, livret de famille…)."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation billet A/R",
+       "text": "La pré-réservation du billet aller-retour n'est pas requise pour les demandeurs de visas en Algérie."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Salarié : attestation d'emploi ou contrat de travail récent, attestation d'affiliation à la CNAS ou lettre explicative de l'employeur. Commerçant : justificatif d'inscription au registre du commerce, attestation d'affiliation à la CASNOS, formulaire C20 mentionnant le chiffre d'affaires et le bilan, et relevés bancaires de la société des 3 derniers mois. Agriculteurs : attestation d'exploitant agricole, carte d'agriculteur et dernière déclaration du revenu annuel. Fonctionnaires : arrêté de nomination ou attestation de fonction et dernier bulletin de salaire. Retraités : attestation de perception d'une pension de retraite. Etudiants ou mineurs : justificatifs de la situation socio-professionnelle des parents et certificat de scolarité ou carte d'étudiant. Personnes sans emploi : preuves d'une situation socio-économique adéquate (certificat de mariage, livret de famille, documents confirmant la propriété d'un bien immobilier). *Cf. autres catégories professionnelles sur la page pays."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Relevés de compte bancaire originaux des 3 derniers mois (émanant de la banque et non édités via internet), 3 derniers bulletins de paie, prise en charge des frais par une personne privée (avec preuves de ressources de l'hôte ou du garant), ou attestation de pension précisant le montant mensuel."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Attestation accueil",
+       "text": "Attestation d'accueil, ou attestation d'hébergement fournie par l'entreprise invitante, ou réservation d'hôtel, ou preuve d'une location ou de la propriété d'un bien immobilier, ou preuve de moyens suffisants pour couvrir les frais d'hébergement (viatique de 120 euros/jour)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros."
+  },
+  "stage-etudiant": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas ressortissant algérien : titre de séjour algérien, valable au minimum trois mois après l'expiration du visa demandé."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Convention stage",
+       "text": "Convention de stage signée entre l'entreprise en France, l'établissement d'origine et le stagiaire."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "La pré-réservation du billet aller-retour n'est pas requise pour les demandeurs de visas en Algérie."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Justificatifs de ressources minimum de 877,50 euros par mois, y compris montant de la gratification."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Attestation d'accueil, ou attestation d'hébergement fournie par l'entreprise invitante, ou réservation d'hôtel, ou preuve d'une location ou de la propriété d'un bien immobilier, ou preuve de moyens suffisants pour couvrir les frais d'hébergement (viatique de 120 euros/jour)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": ""
+  },
+  "stage-salarie": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas ressortissant algérien : titre de séjour algérien, valable au minimum trois mois après l'expiration du visa demandé."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Convention stage",
+       "text": "Convention de stage signée entre l'employeur étranger, l'entreprise en France et le stagiaire."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "La pré-réservation du billet aller-retour n'est pas requise pour les demandeurs de visas en Algérie."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Justificatifs des moyens de subsistance pendant le (ou les) séjour(s) : prise en charge des frais par l'entité invitante ou l'entité d'origine ou prise en charge par une personne privée (avec preuve des ressources de l'hôte ou du garant ou relevé d'un compte bancaire en Algérie pour les trois derniers mois ou autre preuve de ressource financière disponible pendant le séjour, comme carte de crédit internationale, chèques de voyage)."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Attestation d'accueil, ou attestation d'hébergement fournie par l'entreprise invitante, ou réservation d'hôtel, ou preuve d'une location ou de la propriété d'un bien immobilier, ou preuve de moyens suffisants pour couvrir les frais d'hébergement (viatique de 120 euros/jour)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros."
+  },
+  "tourisme": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas ressortissant algérien : titre de séjour algérien, valable au minimum trois mois après l'expiration du visa demandé."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation voyage",
+       "text": "Confirmation de la réservation d'un voyage organisé ou tout autre document indiquant le programme envisagé."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "La pré-réservation du billet aller-retour n'est pas requise pour les demandeurs de visas en Algérie."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Salarié : attestation d'emploi ou contrat de travail récent, attestation d'affiliation à la CNAS ou lettre explicative de l'employeur. Commerçant : justificatif d'inscription au registre du commerce, attestation d'affiliation à la CASNOS, formulaire C20 mentionnant le chiffre d'affaires et le bilan, et relevés bancaires de la société des 3 derniers mois. Agriculteurs : attestation d'exploitant agricole, carte d'agriculteur et dernière déclaration du revenu annuel. Fonctionnaires : arrêté de nomination ou attestation de fonction et dernier bulletin de salaire. Retraités : attestation de perception d'une pension de retraite. Etudiants ou mineurs : justificatifs de la situation socio-professionnelle des parents et certificat de scolarité ou carte d'étudiant. Personnes sans emploi : preuves d'une situation socio-économique adéquate (certificat de mariage, livret de famille, documents confirmant la propriété d'un bien immobilier). *Cf. autres catégories professionnelles sur la page pays."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Relevés de compte bancaire originaux des 3 derniers mois (émanant de la banque et non édités via internet), 3 derniers bulletins de paie, prise en charge des frais par une personne privée (avec preuves de ressources de l'hôte ou du garant), ou attestation de pension précisant le montant mensuel."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Attestation d'accueil, ou attestation d'hébergement fournie par l'entreprise invitante, ou réservation d'hôtel, ou preuve d'une location ou de la propriété d'un bien immobilier, ou preuve de moyens suffisants pour couvrir les frais d'hébergement (viatique de 120 euros/jour)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros."
+  }
+ },
+ "ma": {
+  "affaires": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Invitation",
+       "text": "Ordre de mission original précisant les dates, lieu, motif du déplacement prof. et le cas échéant la prise en charge de l'hébergement et/ou des frais de mission. Lettre d'invitation de l'entreprise visitée ou du partenaire commercial ou convocation précisant le nom, l'adresse de la société, la durée du séjour, le motif et, le cas échéant, la prise en charge et l'hébergement du missionnaire. Preuve de relations d'affaires avec le partenaire commercial européen. Cartes d'entrée à des foires/des congrès."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Pré-réservation du billet aller-retour d'avion, d'autobus ou de bateau."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Salariés : attestation de travail et attestation de déclaration de salaires délivrée par la CNSS. H/F d'affaires, commerçants, prof. libérales : inscription de la société au registre du commerce, statuts de la société, original de la patente et de l'IRG pour l'année en cours, déclaration du dernier paiement en date d'autres impôts effectué.\nRelevés bancaires des 3 derniers mois, carte prof. du demandeur ou attestation de l'ordre prof. Fonctionnaires : attestation de fonction ET tout document attestant des liens personnels du demandeur dans le pays de résidence (copie d'acte de mariage, du livret de famille...)."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Relevés de compte bancaire, bulletins de paie, déclaration de revenus ou tout justificatif d'autres revenus."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou moyens suffisants pour couvrir les frais d'hôtel (viatique de 120 Euros/jour) ou contrat de bail ou certificat de propriété. En cas d'hébergement chez un particulier : attestation d'accueil (formulaire Cerfa)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros, soit environ 990 Dirham marocain."
+  },
+  "famille": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "ETAT-CIVIL",
+     "items": [
+      {
+       "title": "Lien parenté hôte",
+       "text": "Le cas échéant, justificatif du lien de parenté avec l'hôte."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation billet A/R",
+       "text": "Pré-réservation du billet aller-retour d'avion, d'autobus ou de bateau."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Salariés : attestation de travail et attestation de déclaration de salaires délivrée par la CNSS. H/F d'affaires, commerçants, prof. libérales : inscription de la société au registre du commerce, statuts de la société, original de la patente et de l'IRG pour l'année en cours, déclaration du dernier paiement en date d'autres impôts effectué, relevés bancaires des 3 derniers mois, carte prof. du demandeur ou attestation de l'ordre prof. Fonctionnaires : attestat° de fonction et copie R/V de la carte CNOPS.\nRetraités : attestat° de pension. Agriculteurs : attestat° d'exploitant agricole, certificat de titre de propriété agricole. Etudiants : certificat de scolarité/carte d'étudiant pour l'année en cours, original de l'acte de naissance ou livret de famille, document de prise en charge signé et légalisé établissant la situation socio-professionnelle des parents / représentants légaux ET tout document attestant des liens personnels dans le pays de résidence (copie d'acte de mariage, du livret de famille...)."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Originaux des relevés bancaires des trois derniers mois, des trois derniers bulletins de paie ou justificatifs de pension et/ou autre preuve de la propriété de biens ou d'autres moyens de subsistance, selon le cas."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Attestation accueil",
+       "text": "Attestation d'accueil."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": ""
+  },
+  "stage-etudiant": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Convention stage",
+       "text": "Convention de stage signée entre l'entreprise en France, l'établissement d'origine et le stagiaire."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Pré-réservation du billet aller-retour d'avion, d'autobus ou de bateau."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Justificatifs de ressources minimum de 877,50 euros par mois, y compris montant de la gratification."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Attestation d'accueil (en cas d'hébergement chez un particulier) ou réservation d'hôtel ou justificatif de la location ou de la propriété d'un bien immobilier."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 0.00 euros."
+  },
+  "stage-salarie": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Convention stage",
+       "text": "Convention de stage signée entre l'employeur étranger, l'entreprise en France et le stagiaire."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Pré-réservation du billet aller-retour d'avion, d'autobus ou de bateau."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Justificatifs de ressources équivalents au SMIC brut mensuel."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Attestation d'accueil (en cas d'hébergement chez un particulier) ou réservation d'hôtel ou justificatif de la location ou de la propriété d'un bien immobilier."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros."
+  },
+  "tourisme": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation voyage",
+       "text": "Confirmation de la réservation d'un voyage organisé ou tout autre document indiquant le programme envisagé."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Pré-réservation du billet aller-retour d'avion, d'autobus ou de bateau."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Salariés : attestation de travail et attestation de déclaration de salaires délivrée par la CNSS. H/F d'affaires, commerçants, prof. libérales : inscription de la société au registre du commerce, statuts de la société, original de la patente et de l'IRG pour l'année en cours, déclaration du dernier paiement en date d'autres impôts effectué, relevés bancaires des 3 derniers mois, carte prof. du demandeur ou attestation de l'ordre prof. Fonctionnaires : attestat° de fonction et copie R/V de la carte CNOPS.\nRetraités : attestat° de pension. Agriculteurs : attestat° d'exploitant agricole, certificat de titre de propriété agricole. Etudiants : certificat de scolarité/carte d'étudiant pour l'année en cours, original de l'acte de naissance ou livret de famille, document de prise en charge signé et légalisé établissant la situation socio-professionnelle des parents / représentants légaux ET tout document attestant des liens personnels dans le pays de résidence (copie d'acte de mariage, du livret de famille...)."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Originaux des relevés bancaires des trois derniers mois, des trois derniers bulletins de paie ou justificatifs de pension et/ou autre preuve de la propriété de biens ou d'autres moyens de subsistance, selon le cas."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou moyens suffisants pour couvrir les frais d'hôtel (viatique de 120 Euros/jour) ou contrat de bail ou certificat de propriété. En cas d'hébergement chez un particulier : attestation d'accueil (formulaire Cerfa)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros, soit environ 990 Dirham marocain."
+  }
+ },
+ "sn": {
+  "affaires": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation billet A/R",
+       "text": "Attestation de réservation du billet d'avion aller et retour."
+      },
+      {
+       "title": "Invitation",
+       "text": "Lettre d'invitation des entreprises ou autorités visitées. Ordre de mission précisant les dates, lieu et motif du déplacement. Le cas échéant, l'invitation ou l'ordre de mission précisant la prise en charge de l'hébergement et/ou des frais de mission."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Salarié/Fonctionnaire : contrat/attestation de travail ou arrêté d'affectation et 3 derniers bulletins de paie. Commerçant/entrepreneur : immatriculation au registre du commerce, relevé bancaire, preuves de l'activité (factures, envois de marchandises, bail, etc.). Profession libérale : inscription à l'ordre et carte professionnelle. Autre situation : tous justificatifs attestant de la situation professionnelle."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Salariés/Fonctionnaires : 3 derniers bulletins de paie (pour les retraités : bulletins de pension), relevé bancaire des trois derniers mois, carte de crédit. Autres : relevé bancaire des trois derniers mois, carte de crédit. Si prise en charge par un garant : lettre de prise en charge et justificatifs de ressources du garant, copie de sa pièce d'identité. Le cas échéant, copie des remises d'argent (mandats, virements)."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou moyens suffisants pour couvrir les frais d'hôtel (viatique de 120 Euros/jour) ou contrat de bail ou certificat de propriété. En cas d'hébergement chez un particulier : attestation d'accueil originale (formulaire Cerfa 10798*04)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros, soit environ 59 000.00 Franc CFA (BCEAO)."
+  },
+  "famille": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "ETAT-CIVIL",
+     "items": [
+      {
+       "title": "Lien parenté hôte",
+       "text": "Le cas échéant, justificatif du lien de parenté avec l'hôte."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation billet A/R",
+       "text": "Attestation de réservation du billet d'avion aller et retour."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Salarié/Fonctionnaire : attestation travail, attestation congés, fiches de paie. Commerçant : registre du commerce, carte pro, relevé bancaire, preuves d'activité (factures, livraisons, bail, etc.). Profession libérale : inscription à l'ordre, carte pro. Etudiant : certificat scolarité, prise en charge dans pays de résidence. Retraité : pension, relevé bancaire, mandats. Sans emploi : ressources personnelles, prise en charge par un tiers. Tous demandeurs : liens sociaux/familiaux (livret de famille, etc.)."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Salariés/Fonctionnaires : 3 derniers bulletins de paie (pour les retraités : bulletins de pension), relevé bancaire des trois derniers mois, carte de crédit. Autres : relevé bancaire des trois derniers mois, carte de crédit. Si prise en charge par un garant : lettre de prise en charge et justificatifs de ressources du garant, copie de sa pièce d'identité. Le cas échéant, copie des remises d'argent (mandats, virements)."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Attestation accueil",
+       "text": "Attestation d'accueil originale (formulaire Cerfa 10798*04)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros."
+  },
+  "stage-etudiant": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation billet A/R",
+       "text": "Attestation de réservation du billet d'avion aller et retour."
+      },
+      {
+       "title": "Convention stage",
+       "text": "Convention de stage signée entre l'entreprise en France, l'établissement d'origine et le stagiaire."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Justificatifs de ressources minimum de 877,50 euros par mois, y compris montant de la gratification. N.B: un hébergement gratuit est estimé à environ la moitié des ressources demandées."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou moyens suffisants pour couvrir les frais d'hôtel (viatique de 120 Euros/jour) ou contrat de bail ou certificat de propriété. En cas d'hébergement chez un particulier : attestation d'accueil originale (formulaire Cerfa 10798*04)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 0.00 euros, soit environ 0.00 Franc CFA (BCEAO)."
+  },
+  "stage-salarie": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation billet A/R",
+       "text": "Attestation de réservation du billet d'avion aller et retour."
+      },
+      {
+       "title": "Convention stage",
+       "text": "Convention de stage signée entre l'employeur étranger, l'entreprise en France et le stagiaire."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Justificatifs de ressources équivalents au SMIC brut mensuel."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou moyens suffisants pour couvrir les frais d'hôtel (viatique de 120 Euros/jour) ou contrat de bail ou certificat de propriété. En cas d'hébergement chez un particulier : attestation d'accueil originale (formulaire Cerfa 10798*04)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros."
+  },
+  "tourisme": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation billet A/R",
+       "text": "Attestation de réservation du billet d'avion aller et retour."
+      },
+      {
+       "title": "Réservation voyage",
+       "text": "Lettre d'invitation, itinéraire touristique ou formulaire de prise en charge du garant dans le pays d'accueil."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Salarié/Fonctionnaire : attestation travail, attestation congés, fiches de paie. Commerçant : registre du commerce, carte pro, relevé bancaire, preuves d'activité (factures, livraisons, bail, etc.). Profession libérale : inscription à l'ordre, carte pro. Etudiant : certificat scolarité, prise en charge dans pays de résidence. Retraité : pension, relevé bancaire, mandats. Sans emploi : ressources personnelles, prise en charge par un tiers. Tous demandeurs : liens sociaux/familiaux (livret de famille, etc.)."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Salariés/Fonctionnaires : 3 derniers bulletins de paie (pour les retraités : bulletins de pension), relevé bancaire des trois derniers mois, carte de crédit. Autres : relevé bancaire des trois derniers mois, carte de crédit. Si prise en charge par un garant : lettre de prise en charge et justificatifs de ressources du garant, copie de sa pièce d'identité. Le cas échéant, copie des remises d'argent (mandats, virements)."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou moyens suffisants pour couvrir les frais d'hôtel (viatique de 120 Euros/jour) ou contrat de bail ou certificat de propriété. En cas d'hébergement chez un particulier : attestation d'accueil originale (formulaire Cerfa 10798*04)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros."
+  }
+ },
+ "tn": {
+  "affaires": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Invitation",
+       "text": "Invitation d'une entreprise ou d'une autorité à participer à des conférences ou à des manifestations à caractère commercial, industriel ou professionnel précisant la durée prévue du séjour, le but du séjour, la prise en charge financière, ainsi que le programme détaillé."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Justificatifs de la situation professionnelle (certificat de travail, attestation de l'ordre professionnel, attestation de l'ordre syndical, …)."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Relevés de compte bancaire, bulletins de paie, déclaration de revenus ou tout justificatif d'autres revenus."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Attestation d'accueil (document à faire établir par la mairie du lieu de résidence de l'hébergeant) ou réservation d'hôtel ou moyens suffisants pour couvrir les frais d'hébergement (viatique de 120 euros/jour) ou contrat de bail."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros."
+  },
+  "famille": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "ETAT-CIVIL",
+     "items": [
+      {
+       "title": "Lien parenté hôte",
+       "text": "Le cas échéant, justificatif du lien de parenté avec l'hôte."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Justificatifs de la situation socio-professionnelle (contrat de travail, certificat de travail, extrait du registre du commerce et des sociétés, certificat de scolarité, justificatif de pension...) et tout document attestant des liens personnels du demandeur dans le pays de résidence (copie d'acte de mariage, du livret de famille...)."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Copie du relevé de compte des 3 derniers mois et/ou copie du livret d'épargne, relevé original CNSS, justificatifs de pension. Pour les personnes ne fournissant pas leurs relevés de compte personnel, une lettre de prise en charge signée par le propriétaire du compte."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Attestation accueil",
+       "text": "Attestation d'accueil (document à faire établir par la mairie du lieu de résidence de l'hébergeant)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": ""
+  },
+  "stage-etudiant": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Convention stage",
+       "text": "Convention de stage signée entre l'entreprise en France, l'établissement d'origine et le stagiaire."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Justificatifs de ressources minimum de 877,50 euros par mois, y compris montant de la gratification."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou contrat de bail ou attestation d'accueil (document à faire établir par la mairie du lieu de résidence de l'hébergeant)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 0.00 euros."
+  },
+  "stage-salarie": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Convention stage",
+       "text": "Convention de stage signée entre l'employeur étranger, l'entreprise en France et le stagiaire."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Copie du relevé de compte des 3 derniers mois et/ou copie du livret d'épargne et/ou prise en charge par un tiers/relevé original CNSS, montant de la gratification (justificatifs de ressources dont le montant doit être équivalent au SMIC brut mensuel)."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Réservation d'hôtel ou contrat de bail ou attestation d'accueil (document à faire établir par la mairie du lieu de résidence de l'hébergeant)."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros."
+  },
+  "tourisme": {
+   "read": "lu le 13/10/2026 sur https://france-visas.gouv.fr/assistant-visa",
+   "sections": [
+    {
+     "section": "PRÉ-REQUIS",
+     "items": [
+      {
+       "title": "Photographie",
+       "text": "Photographie d'identité."
+      },
+      {
+       "title": "Note verbale",
+       "text": "Si vous êtes titulaire d'un document de voyage officiel, présentation obligatoire d'une note verbale."
+      },
+      {
+       "title": "Preuve résidence",
+       "text": "Si vous n'êtes pas un ressortissant de votre pays de résidence : preuve de votre résidence légale dans ce pays (titre de séjour…)."
+      },
+      {
+       "title": "Document voyage",
+       "text": "Un document de voyage, délivré depuis moins de 10 ans, comportant au minimum deux pages vierges, d'une durée de validité supérieure d'au moins 3 mois à la date à laquelle vous avez prévu de quitter l'Espace Schengen ou, en cas de long séjour, d'une durée de validité supérieure d'au moins trois mois à la date d'expiration du visa sollicité. Veillez à transmettre (numériser) la page identité de votre document de voyage ainsi que TOUTES LES PAGES comportant des visas, cachets d'entrée et sortie ou toute autre inscription."
+      }
+     ]
+    },
+    {
+     "section": "OBJET DU VOYAGE/SÉJOUR",
+     "items": [
+      {
+       "title": "Réservation voyage",
+       "text": "Confirmation de la réservation d'un voyage organisé ou tout autre document indiquant le programme envisagé."
+      },
+      {
+       "title": "Réservation billet A/R",
+       "text": "Réservation du billet aller-retour ou itinéraire."
+      }
+     ]
+    },
+    {
+     "section": "PREUVE D'INSTALLATION DANS LE PAYS DE RÉSIDENCE",
+     "items": [
+      {
+       "title": "Situation professionnelle",
+       "text": "Justificatifs de la situation socio-professionnelle (contrat de travail, certificat de travail, extrait du registre du commerce et des sociétés, certificat de scolarité, justificatif de pension...) et tout document attestant des liens personnels du demandeur dans le pays de résidence (copie d'acte de mariage, du livret de famille...)."
+      }
+     ]
+    },
+    {
+     "section": "RESSOURCES",
+     "items": [
+      {
+       "title": "Ressources",
+       "text": "Copie du relevé de compte des 3 derniers mois et/ou copie du livret d'épargne, relevé original CNSS, justificatifs de pension. Pour les personnes ne fournissant pas leurs relevés de compte personnel, une lettre de prise en charge signée par le propriétaire du compte."
+      }
+     ]
+    },
+    {
+     "section": "HÉBERGEMENT",
+     "items": [
+      {
+       "title": "Hébergement",
+       "text": "Attestation d'accueil (document à faire établir par la mairie du lieu de résidence de l'hébergeant) ou réservation d'hôtel ou moyens suffisants pour couvrir les frais d'hébergement (viatique de 120 euros/jour) ou contrat de bail."
+      }
+     ]
+    },
+    {
+     "section": "ASSURANCE MÉDICALE DE VOYAGE",
+     "items": [
+      {
+       "title": "Assurance médicale",
+       "text": "Attestation d'assurance médicale de voyage (voir FAQ pour détails)."
+      }
+     ]
+    }
+   ],
+   "fee": "Le montant à acquitter est de : 90.00 euros."
+  }
+ }
+}

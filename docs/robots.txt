@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /pieces-en-ordre/
+Disallow: /pieces-en-ordre/merci/
+Sitemap: https://outils.vread.fr/pieces-en-ordre/sitemap.xml

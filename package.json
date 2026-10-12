@@ -1,0 +1,12 @@
+{
+  "name": "pieces-en-ordre",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/parse-assistant.mjs && node scripts/build.mjs",
+    "serve": "node scripts/serve.mjs",
+    "test": "playwright test",
+    "test:live": "BASE_URL=https://outils.vread.fr/pieces-en-ordre/ playwright test"
+  },
+  "devDependencies": { "@playwright/test": "1.64.0" }
+}
