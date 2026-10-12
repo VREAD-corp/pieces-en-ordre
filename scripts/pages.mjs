@@ -219,7 +219,7 @@ export function PAGES(c) {
   </fieldset>
   <label>Votre e-mail<input type="email" name="email" required autocomplete="email" inputmode="email"></label>
   <label class="hp" aria-hidden="true">Site web<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-  <label class="inline consent"><input type="checkbox" name="consent" required> J’accepte que READ FRANCE SAS conserve cet e-mail et mes deux choix ci-dessus pour me prévenir une fois de l’ouverture du Pack, puis les efface (au plus tard 6 mois après). <a href="${BASE}confidentialite/">Confidentialité</a></label>
+  <label class="inline consent"><input type="checkbox" name="consent" required> <span>J’accepte que READ FRANCE SAS conserve cet e-mail et mes deux choix ci-dessus pour me prévenir une fois de l’ouverture du Pack, puis les efface (au plus tard 6 mois après). <a href="${BASE}confidentialite/">Confidentialité</a></span></label>
   <p>Ne saisissez aucun numéro de passeport ni aucune information sur votre dossier : nous n’en avons pas besoin.</p>
   <button class="btn" type="submit">Être prévenu à l’ouverture</button>
   <p class="form-msg" role="status" aria-live="polite"></p>

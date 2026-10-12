@@ -52,6 +52,7 @@ function handle_(e, req) {
       case 'rights': return json_(rights_(req));
       case 'summary': return json_(summary_(req));
       case 'purge_tests': return json_(purgeTests_(req));
+      case 'reset_stats': return json_(resetStats_(req));
       case 'ping': return json_({ ok: true, app: 'pieces-en-ordre', consentVersion: APP.consentVersion });
       default: return json_({ ok: false, error: 'unknown_action' });
     }
@@ -299,6 +300,17 @@ function purgeTests_(req) {
     });
     var st = tab_('Stats', STATS_HEADER);
     for (var s = st.getLastRow(); s >= 2; s--) if (String(st.getRange(s, 7).getValue()) === 'e2e-test') { st.deleteRow(s); n++; }
+    return { ok: true, deleted: n };
+  });
+}
+
+/** Admin: deletes every Stats row (used once at launch, so the baseline starts at zero). Interest rows are kept. */
+function resetStats_(req) {
+  checkAdmin_(req);
+  return withLock_(function () {
+    var st = tab_('Stats', STATS_HEADER);
+    var n = Math.max(st.getLastRow() - 1, 0);
+    if (n) st.deleteRows(2, n);
     return { ok: true, deleted: n };
   });
 }

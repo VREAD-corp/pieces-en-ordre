@@ -32,6 +32,8 @@ test('home: tool above the fold, independence and legal footer', async ({ page }
 });
 
 test('picker opens the right list; ticks persist on this device only', async ({ page }) => {
+  // The picker navigation drops the utm marker: switch tracking off for this test (Do Not Track).
+  await page.addInitScript(() => Object.defineProperty(navigator, 'doNotTrack', { get: () => '1' }));
   await page.goto('./' + q);
   await page.selectOption('#choisir select[name=pays]', 'dz');
   await page.selectOption('#choisir select[name=motif]', 'famille');
@@ -81,7 +83,7 @@ test('pack page shows real PDF pages and limits', async ({ page }) => {
   await page.goto('pack/' + q);
   for (const img of await page.locator('.pack-shots img').all()) {
     await img.scrollIntoViewIfNeeded();
-    expect(await img.evaluate(i => i.complete && i.naturalWidth > 100)).toBe(true);
+    await expect.poll(() => img.evaluate(i => i.complete && i.naturalWidth > 100), { timeout: 15000 }).toBe(true);
   }
   await expect(page.locator('main')).toContainText('aucun modèle de recours');
   await noHScroll(page);

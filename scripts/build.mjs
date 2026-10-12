@@ -105,7 +105,7 @@ function listHtml(cc, fileKey) {
     if (items.length) main.push(`<section class="sec"><h3>${esc(s.section.charAt(0) + s.section.slice(1).toLowerCase())}</h3><ol class="items">${items.join('')}</ol></section>`);
     cond.push(...cItems);
   }
-  const fee = data.fee ? esc(data.fee.replace('Le montant à acquitter est de : ', '').replace(/^90\.00 euros/, '90 €').replace(/^0\.00 euros\.?/, '0 € (exonération)')) : '90 € pour un adulte (FAQ France-Visas)';
+  const fee = data.fee ? esc(data.fee.replace('Le montant à acquitter est de : ', '').replace(/^90\.00 euros\.?/, '90 €').replace(/\.$/, '').replace(/^0\.00 euros\.?/, '0 € (exonération)')) : '90 € pour un adulte (FAQ France-Visas)';
   return { html: main.join('\n') + (cond.length ? `<details class="cond"><summary>Cas particuliers (passeport officiel, résidence dans un autre pays)</summary><ul>${cond.join('')}</ul></details>` : ''), count: idx, fee };
 }
 
