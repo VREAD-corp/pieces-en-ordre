@@ -30,7 +30,7 @@ test('mesure.js: bots, webdriver, octave_notrack and prerender are not visits', 
   test.skip(info.project.name !== 'desktop-1440', 'browser-independent, run once');
   let r = run();
   expect(r.sent.map((b) => b.event)).toEqual(['view', 'pack_view']);
-  expect(r.sent.every((b) => !('excluded' in b))).toBe(true);
+  expect(r.sent.every((b) => !('excluded' in b) && b.v === 2)).toBe(true);
   expect(JSON.stringify(r.sent)).not.toContain('Chrome');
   expect(run({ webdriver: true }).sent.every((b) => b.excluded === 'webdriver')).toBe(true);
   expect(run({ ua: GOOGLEBOT }).sent.every((b) => b.excluded === 'bot')).toBe(true);

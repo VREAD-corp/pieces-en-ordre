@@ -2,10 +2,13 @@
 // No framework, no web font, no third-party script: pages must load on slow mobile networks.
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 import { VERIFIED, SOURCES, MOTIFS_REFUS, POURQUOI, MOTIFS_SEJOUR, PAYS } from '../data/content.mjs';
 import { PAGES } from './pages.mjs';
 
 const ROOT = new URL('..', import.meta.url).pathname;
+// Cache-busting for mesure.js: crawlers' renderers keep an old copy of the same URL.
+const MESURE_V = crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, 'static/mesure.js'))).digest('hex').slice(0, 8);
 const OUT = path.join(ROOT, 'docs');
 const BASE = '/pieces-en-ordre/';
 const ORIGIN = 'https://outils.vread.fr';
@@ -71,7 +74,7 @@ ${body}
     <p class="small">Textes officiels cités : France-Visas (licence etalab-2.0), Service-public.fr, Légifrance, EUR-Lex. Dernière vérification : ${VERIFIED}. Mesure d’audience anonyme, sans cookie.</p>
   </div>
 </footer>
-<script src="${BASE}mesure.js" defer></script>
+<script src="${BASE}mesure.js?v=${MESURE_V}" defer></script>
 <script src="${BASE}app.js" defer></script>
 </body>
 </html>

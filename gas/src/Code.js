@@ -39,7 +39,8 @@ var STATS_HEADER = ['date', 'site', 'page', 'event', 'variant', 'source', 'mediu
 var STATS_KEYS = 8;
 var EXCL_HEADER = ['date', 'site', 'page', 'event', 'variant', 'reason', 'count', 'mobile', 'desktop', 'updated_at'];
 var EXCL_KEYS = 6;
-var EXCL_REASONS = ['webdriver', 'bot', 'notrack'];
+// legacy: a hit without `v` comes from a pre-2026-10-13 mesure.js, which crawlers' renderers keep cached.
+var EXCL_REASONS = ['webdriver', 'bot', 'notrack', 'legacy'];
 
 function doGet(e) { return handle_(e, (e && e.parameter) || {}); }
 
@@ -163,7 +164,7 @@ function validateTrack_(req) {
     source: token_(req.utm_source, 50) || ref || '(direct)',
     medium: token_(req.utm_medium, 30), campaign: token_(req.utm_campaign, 50),
     device: req.device === 'mobile' || req.device === 'desktop' ? req.device : '',
-    reason: EXCL_REASONS.indexOf(String(req.excluded || '')) >= 0 ? String(req.excluded) : (req.excluded ? 'bot' : ''),
+    reason: EXCL_REASONS.indexOf(String(req.excluded || '')) >= 0 ? String(req.excluded) : (req.excluded ? 'bot' : (req.v ? '' : 'legacy')),
   };
 }
 
