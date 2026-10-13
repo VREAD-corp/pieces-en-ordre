@@ -13,7 +13,7 @@ export function PAGES(c) {
     pageClass: 'home',
     jsonld: `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebSite', name: 'Pièces en ordre', url: 'https://outils.vread.fr' + BASE, inLanguage: 'fr', publisher: { '@type': 'Organization', name: 'READ FRANCE SAS', email: 'octave@vread.fr' } })}</script>`,
     body: `
-<div class="hero">
+<div class="hero" data-section="hero">
   <div>
     <h1>Visa court séjour pour la France : vérifiez votre dossier pièce par pièce avant le rendez-vous</h1>
     <p class="lede">Pour une demande déposée au Maroc, en Algérie, en Tunisie, au Sénégal, en Côte d’Ivoire ou au Cameroun. Nous avons relevé les 30 listes officielles de l’Assistant visa de France-Visas (6 pays, 5 motifs) le ${VERIFIED} et ajouté, pour chaque pièce, la raison pour laquelle le consulat la demande.</p>
@@ -33,12 +33,12 @@ export function PAGES(c) {
   </figure>
 </div>
 
-<section>
+<section data-section="listes">
   <h2>Toutes les listes</h2>
   <ul class="grid">${grid}</ul>
 </section>
 
-<section class="two">
+<section class="two" data-section="a-propos">
   <div>
     <h2>Ce que fait ce site</h2>
     <p>Il met en ordre les pièces demandées par la liste officielle pour votre pays de dépôt et votre motif, explique ce que chaque pièce prouve et renvoie au motif de refus correspondant dans le formulaire officiel (annexe VI du code des visas). Vous pouvez cocher et imprimer.</p>
@@ -49,14 +49,14 @@ export function PAGES(c) {
   </div>
 </section>
 
-<section>
+<section data-section="motifs-refus">
   <h2>Les motifs de refus du formulaire officiel</h2>
   <p>Un refus de visa est notifié sur un formulaire type qui comporte 17 cases (annexe VI du code des visas ; la 17e concerne l’abrogation à la demande du titulaire). ${DOSSIER_MOTIFS.length} d’entre elles portent directement sur le contenu du dossier :</p>
   <ul class="motif-list">${MOTIFS_REFUS.filter(([n]) => DOSSIER_MOTIFS.includes(n)).map(([n, t]) => `<li><b>n° ${n}</b> ${esc(t)}</li>`).join('')}</ul>
   <p>Les autres cases visent un faux passeport, la règle des 90 jours sur 180, un signalement Schengen ou une menace pour l’ordre public, la santé ou les relations internationales. <a href="${BASE}refus/">Le formulaire complet et les recours</a>.</p>
 </section>
 
-<section class="calendar">
+<section class="calendar" data-section="calendrier">
   <h2>Le calendrier fixé par le code des visas</h2>
   <table>
     <tr><th scope="row">Dépôt au plus tôt</th><td>6 mois avant le début du voyage (art. 9)</td></tr>
@@ -68,7 +68,7 @@ export function PAGES(c) {
   <p class="small">Source : ${src(['codeVisas'])}. Les délais de rendez-vous propres à chaque pays figurent sur chaque liste.</p>
 </section>
 
-<section class="pack-teaser">
+<section class="pack-teaser" data-section="pack">
   <h2>Pack dossier : la version à imprimer, pour vous ou pour l’hôte qui paie</h2>
   <p>Un PDF par pays et par motif, la checklist de l’hôte (attestation d’accueil en mairie), un modèle de lettre de présentation, un modèle d’itinéraire et un calendrier de J-30 au rendez-vous. <a href="${BASE}pack/">Voir le contenu</a>.</p>
   <p><a class="btn" href="${BASE}commander/" data-mesure="cta_click">Commander le Pack, <span data-price>19</span> €</a></p>
@@ -83,7 +83,7 @@ export function PAGES(c) {
     body: `
 <h1>Vous accueillez un proche : l’attestation d’accueil, étape par étape</h1>
 <p class="lede">Pour une visite familiale ou privée de moins de 3 mois chez un particulier, l’attestation d’accueil est obligatoire (FAQ France-Visas). C’est l’hôte qui la demande, à la mairie du lieu d’hébergement, avant la demande de visa. Étapes reprises de Service-public.fr (fiche vérifiée par la DILA le 21/10/2025), lues le ${VERIFIED}.</p>
-<ol class="steps">
+<ol class="steps" data-section="etapes">
   <li><h2>Acheter le timbre fiscal de 30 €</h2><p>En ligne (timbre électronique : PDF à code 2D ou SMS à 16 chiffres) ou chez un buraliste équipé. Ne pas acheter un « timbre amende ». La taxe n’est pas remboursée si la mairie refuse.</p></li>
   <li><h2>Réunir les originaux</h2><ul>
     <li>Justificatif d’identité (titre de séjour si vous n’êtes pas Européen)</li>
@@ -102,8 +102,8 @@ export function PAGES(c) {
 </ol>
 <p class="note">L’assurance médicale de 30 000 € minimum peut être souscrite par le visiteur ou par vous. Si vous prenez en charge les frais du séjour, les listes officielles demandent en général une lettre de prise en charge avec vos propres justificatifs de ressources : vérifiez la liste du pays.</p>
 <p class="small">Sources : ${src(['spAccueil', 'spAccueilForm', 'fvFaq'])}.</p>
-<section class="warn"><h2>Attestation de complaisance</h2><p>Signer une attestation pour une personne que vous n’hébergerez pas, ou y porter des mentions inexactes, peut entraîner un refus de la mairie (« les mentions portées sur l’attestation sont inexactes ») et relève du Code pénal : établir ou utiliser une attestation faisant état de faits matériellement inexacts est puni d’un an d’emprisonnement et de 15 000 € d’amende (art. 441-7). ${src(['cp4417'])}.</p></section>
-<section class="pack-teaser"><h2>Vous payez pour votre proche ?</h2><p>Le Pack dossier contient cette checklist en version imprimable, avec la liste du visiteur pour son pays. Paiement par carte, en euros.</p><p><a class="btn" href="${BASE}commander/?role=hote" data-mesure="cta_click">Commander le Pack, <span data-price>19</span> €</a></p></section>
+<section class="warn" data-section="complaisance"><h2>Attestation de complaisance</h2><p>Signer une attestation pour une personne que vous n’hébergerez pas, ou y porter des mentions inexactes, peut entraîner un refus de la mairie (« les mentions portées sur l’attestation sont inexactes ») et relève du Code pénal : établir ou utiliser une attestation faisant état de faits matériellement inexacts est puni d’un an d’emprisonnement et de 15 000 € d’amende (art. 441-7). ${src(['cp4417'])}.</p></section>
+<section class="pack-teaser" data-section="pack"><h2>Vous payez pour votre proche ?</h2><p>Le Pack dossier contient cette checklist en version imprimable, avec la liste du visiteur pour son pays. Paiement par carte, en euros.</p><p><a class="btn" href="${BASE}commander/?role=hote" data-mesure="cta_click">Commander le Pack, <span data-price>19</span> €</a></p></section>
 `,
   });
 
@@ -116,11 +116,11 @@ export function PAGES(c) {
 <p class="lede">Page d’information générale, à jour au ${VERIFIED}. Elle ne remplace pas la lecture de votre décision ni l’avis d’un avocat.</p>
 <h2>Les motifs du formulaire officiel</h2>
 <p>La décision est notifiée sur le formulaire type de l’annexe VI du code des visas. Les cases cochées indiquent le ou les motifs :</p>
-<ol class="motifs-all">${MOTIFS_REFUS.map(([n, t]) => `<li id="motif-${n}" value="${n}">${esc(t)}</li>`).join('')}</ol>
+<ol class="motifs-all" data-section="motifs">${MOTIFS_REFUS.map(([n, t]) => `<li id="motif-${n}" value="${n}">${esc(t)}</li>`).join('')}</ol>
 <p class="small">Texte : ${src(['codeVisas'])}. La case 17 (abrogation demandée par le titulaire) n’est pas un refus.</p>
 
 <h2>La procédure, dans l’ordre</h2>
-<ol class="steps">
+<ol class="steps" data-section="procedure">
   <li><h3>Recours administratif préalable obligatoire (Rapo), sous 30 jours</h3><p>Pour un visa de court séjour, le recours s’adresse au <b>sous-directeur des visas</b> du ministère de l’Intérieur, dans un délai de 30 jours à compter de la notification du refus. Il doit être motivé, rédigé en français et signé. Il est obligatoire avant tout recours devant le juge. Adresse indiquée par France-Visas : BP 83609, 44036 Nantes Cedex 01.</p></li>
   <li><h3>Réponse du sous-directeur</h3><p>Il peut rejeter le recours ou demander au consulat de délivrer le visa. Sans réponse dans les 2 mois, le recours est rejeté implicitement.</p></li>
   <li><h3>Recours en annulation devant le tribunal administratif de Nantes, sous 2 mois</h3><p>À compter du rejet, explicite ou implicite, du Rapo. C’est le tribunal compétent pour les refus de visa.</p></li>
@@ -128,7 +128,7 @@ export function PAGES(c) {
 <p>Pour un visa de <b>long séjour</b>, le recours préalable va à la Commission de recours contre les décisions de refus de visa (CRRV), à la même boîte postale. Sans décision dans les 2 mois après le dépôt de la demande, la demande de visa est elle-même considérée comme refusée et peut faire l’objet de ces recours. Les pages officielles consultées ne décrivent pas de recours gracieux auprès du consulat pour le court séjour : la voie indiquée est le Rapo.</p>
 <p class="small">Sources : ${src(['spVisaC', 'fvFaq', 'codeVisas'])}.</p>
 
-<section class="note-box">
+<section class="note-box" data-section="pas-de-modele">
   <h2>Pourquoi nous ne vendons pas de modèle de recours</h2>
   <p>Un Rapo doit répondre aux motifs de <em>votre</em> décision, avec <em>vos</em> pièces. Un texte pré-rédigé ne le fait pas, et rédiger ce recours pour autrui contre rémunération relève de la consultation juridique, réservée par la loi aux professions réglementées (loi n° 71-1130, art. 54 : ${src(['loi54'])}). Nous nous limitons donc à cette page d’information. Pour un avis sur votre cas : un avocat (<a href="https://www.avocat.fr/" rel="noopener">annuaire du Conseil national des barreaux</a>) ou un Point-justice, accès au droit gratuit (<a href="https://www.justice.fr/" rel="noopener">justice.fr</a>).</p>
 </section>
@@ -178,12 +178,12 @@ export function PAGES(c) {
     body: `
 <h1>Pack dossier : votre liste en version imprimable, avec les modèles</h1>
 <p class="lede">Un fichier par pays de dépôt et par motif (6 pays, 4 motifs). Il reprend la liste officielle de cette page et ajoute ce qu’il faut pour préparer le dossier sur papier. Prix : <b><span data-price>19</span> €</b>, paiement unique. L’hôte en France peut le payer par carte, en euros.</p>
-<div class="pack-shots">
+<div class="pack-shots" data-section="apercu">
   <figure><img src="${BASE}pack-p1.png" width="595" height="842" loading="lazy" alt="Page 1 du Pack : couverture Algérie, visite familiale, mode d’emploi"><figcaption>Page de couverture (Algérie, visite familiale)</figcaption></figure>
   <figure><img src="${BASE}pack-p2.png" width="595" height="842" loading="lazy" alt="Page de checklist avec colonnes original, copie, prêt"><figcaption>La checklist : original, copie, prêt</figcaption></figure>
 </div>
 <h2>Ce que contient le Pack</h2>
-<table class="contents">
+<table class="contents" data-section="contenu">
   <tr><th scope="row">Checklist détaillée (PDF)</th><td>Chaque pièce de la liste officielle de votre pays, avec le texte France-Visas, ce qu’il faut vérifier sur le papier, la colonne original / copie / prêt et le motif de refus correspondant.</td></tr>
   <tr><th scope="row">Fiche pays</th><td>Prestataire, centres, frais de service, délais de rendez-vous, avertissements officiels.</td></tr>
   <tr><th scope="row">Checklist de l’hôte</th><td>L’attestation d’accueil en mairie, étape par étape (visite familiale et tourisme chez un particulier) ; la lettre d’invitation de l’entreprise (affaires) ; la convention de stage (stage).</td></tr>
@@ -193,7 +193,7 @@ export function PAGES(c) {
 </table>
 <h2>Ce que le Pack ne contient pas</h2>
 <p>Aucun conseil personnalisé, aucune relecture de vos pièces, aucun rendez-vous, aucune réservation et aucun modèle de recours. Il ne garantit pas la délivrance du visa. Il ne contient rien qui aide à produire une pièce inexacte.</p>
-<p><a class="btn" href="${BASE}commander/" data-mesure="cta_click">Commander le Pack, <span data-price>19</span> €</a></p>
+<p data-section="commander"><a class="btn" href="${BASE}commander/" data-mesure="cta_click">Commander le Pack, <span data-price>19</span> €</a></p>
 <p class="small">Vous pouvez aussi utiliser gratuitement les <a href="${BASE}#choisir">listes en ligne</a> : elles contiennent les mêmes pièces.</p>
 `,
   });
@@ -209,7 +209,7 @@ export function PAGES(c) {
 <div class="note-box">
   <p><b>Le paiement en ligne n’est pas encore ouvert.</b> Nous mesurons d’abord l’intérêt pour ce Pack avant d’ouvrir la caisse. Si vous laissez votre adresse, vous recevrez un seul e-mail, à l’ouverture, au prix affiché ici. Rien n’est débité aujourd’hui.</p>
 </div>
-<form id="octave-pay" class="order-form" data-endpoint="${ENDPOINT}" novalidate>
+<form id="octave-pay" class="order-form" data-section="formulaire" data-endpoint="${ENDPOINT}" novalidate>
   <label>Pays où la demande sera déposée<select name="country" required><option value="">Choisir</option>${paysOptions}<option value="autre">Autre pays</option></select></label>
   <label>Motif du séjour<select name="purpose" required><option value="">Choisir</option>${motifOptions}</select></label>
   <fieldset><legend>Vous êtes</legend>
@@ -268,14 +268,22 @@ ${Object.values(PAYS).map(p => `<tr><td><a href="${p.url}" rel="noopener">France
   pages.push({
     path: BASE + 'confidentialite/',
     title: 'Confidentialité (RGPD)',
-    description: 'Données traitées par Pièces en ordre : mesure d’audience anonyme sans cookie, e-mail laissé volontairement pour l’ouverture du Pack.',
+    description: 'Données traitées par Pièces en ordre : mesure d’audience et de comportement anonyme et agrégée, sans cookie, tests A/B, e-mail laissé volontairement pour l’ouverture du Pack.',
     body: `
 <h1>Confidentialité</h1>
 <p class="lede">Responsable du traitement : READ FRANCE SAS, 11 rue Rouvet, 75019 Paris, <a href="mailto:octave@vread.fr">octave@vread.fr</a>.</p>
 <h2>Ce que nous ne collectons pas</h2>
 <p>Aucun document, aucun numéro de passeport, aucune date de naissance, aucun nom de voyageur. Les listes fonctionnent dans votre navigateur : les cases cochées sont gardées sur votre appareil (stockage local du navigateur) et ne nous sont jamais envoyées. Aucun cookie, aucun traceur publicitaire.</p>
-<h2>Mesure d’audience anonyme</h2>
-<p>À chaque page vue et à quelques clics (choix d’une liste, impression, bouton du Pack), le navigateur envoie un compteur sans identifiant : page, événement, site d’origine, paramètres de campagne, type d’écran (mobile ou ordinateur), variante de prix affichée. Ces compteurs sont additionnés par jour dans un tableur Google (Google LLC, sous-traitant) ; votre adresse IP n’y est pas enregistrée. Rien n’est envoyé si votre navigateur active « Do Not Track » ou « Global Privacy Control ». Les robots d’indexation et les navigateurs automatisés, reconnus dans votre navigateur sans que leur signature soit transmise, sont comptés à part ; une page préchargée n’est comptée que si vous l’ouvrez. Base légale : intérêt légitime (mesurer l’usage du service), sans consentement nécessaire car aucune information n’est lue ni déposée sur votre appareil à cette fin.</p>
+<h2>Mesure d’audience et de comportement, anonyme et agrégée</h2>
+<p class="small">Section mise à jour le 13 octobre 2026.</p>
+<p>Pour améliorer ce site, le navigateur envoie, sans identifiant, des compteurs sur l’usage des pages : page vue, événement (choix d’une liste, impression, bouton du Pack), site d’origine, paramètres de campagne, type d’écran (mobile ou ordinateur), profondeur de défilement, parties de la page atteintes, temps écoulé avant le premier clic sur un bouton (par tranche), formulaires commencés et envoyés avec le <em>nom</em> du dernier champ touché (jamais son contenu), questions dépliées, liens sortants (nom de domaine seulement), erreurs techniques (une empreinte anonyme du message), vitesse d’affichage (Core Web Vitals) et clics répétés au même endroit. Ces compteurs sont additionnés par jour dans un tableur Google (Google LLC, sous-traitant) : nous ne gardons que des totaux quotidiens, jamais une ligne par visite.</p>
+<p>Aucun cookie, aucun identifiant, aucune adresse IP conservée, aucune donnée personnelle, aucun suivi d’un site à l’autre. Ces statistiques servent uniquement à ce site ; elles ne sont ni croisées avec d’autres traitements, ni partagées, ni vendues. Les robots d’indexation et les navigateurs automatisés, reconnus dans votre navigateur sans que leur signature soit transmise, sont comptés à part ; une page préchargée n’est comptée que si vous l’ouvrez.</p>
+<h3>Tests A/B</h3>
+<p>Certains visiteurs voient une autre version d’un titre, d’un bouton ou d’un prix (aujourd’hui : le prix du Pack, 19 € ou 29 €). La lettre de la version affichée est gardée dans le stockage de session de l’onglet (« sessionStorage », effacé à la fermeture de l’onglet), ou choisie selon la date sans rien stocker ; elle n’est jamais reliée à une personne. Le prix qui serait facturé est toujours celui affiché.</p>
+<h3>Refuser la mesure</h3>
+<p>Si votre navigateur active « Do Not Track » ou « Global Privacy Control », aucune mesure n’est envoyée.</p>
+<h3>Base légale</h3>
+<p>Intérêt légitime de READ FRANCE SAS à mesurer et améliorer son service. Cette mesure reste dans l’exemption de consentement prévue pour la mesure d’audience (article 82 de la loi Informatique et Libertés ; lignes directrices et recommandation de la CNIL du 17 septembre 2020 sur les cookies et autres traceurs) : statistiques strictement agrégées et propres à ce site, sans suivi d’un site à l’autre, sans croisement avec d’autres traitements ni transmission à des tiers. Aucun bandeau de consentement n’est donc nécessaire.</p>
 <h2>E-mail laissé pour l’ouverture du Pack</h2>
 <p>Si vous remplissez le formulaire de commande : e-mail, pays, motif, rôle (demandeur ou hôte), offre et prix affichés. Finalité : vous prévenir une fois de l’ouverture du paiement. Base légale : votre consentement, que vous pouvez retirer à tout moment. Conservation : 6 mois au plus. Destinataires : READ FRANCE SAS ; hébergement chez Google (Google Sheets), avec des transferts hors UE encadrés par les clauses contractuelles types de Google.</p>
 <h2>Vos droits</h2>

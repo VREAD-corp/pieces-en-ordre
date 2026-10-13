@@ -8,7 +8,7 @@ const src = fs.readFileSync(new URL('../static/mesure.js', import.meta.url), 'ut
 const CHROME = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36';
 const GOOGLEBOT = 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.7390.0 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
 
-function run({ ua = CHROME, webdriver = false, search = '', store = {}, prerendering = false, visibility = 'visible', dnt = '' } = {}) {
+function run({ ua = CHROME, webdriver = false, search = '', store = {}, prerendering = false, visibility = 'visible', dnt = '', variant } = {}) {
   const sent = [], listeners = {};
   const doc = {
     referrer: 'https://www.google.com/', prerendering, visibilityState: visibility,
@@ -21,6 +21,7 @@ function run({ ua = CHROME, webdriver = false, search = '', store = {}, prerende
     fetch: (u, o) => { sent.push(JSON.parse(o.body)); expect(o.credentials).toBe('omit'); return Promise.resolve(); },
   };
   ctx.window = ctx;
+  if (variant !== undefined) ctx.octaveCro = { v: (id) => (id === 'price' ? variant : undefined) };
   vm.runInNewContext(src, ctx);
   const fire = (k) => (listeners[k] || []).slice().forEach((f) => f({}));
   return { sent, store, fire, doc };
@@ -51,4 +52,12 @@ test('mesure.js: bots, webdriver, octave_notrack and prerender are not visits', 
   expect(r.sent).toHaveLength(0);
   r.doc.visibilityState = 'visible'; r.fire('visibilitychange'); r.fire('visibilitychange');
   expect(r.sent.filter((b) => b.event === 'view')).toHaveLength(1);
+});
+
+test('mesure.js: the price variant comes from cro.js (octaveCro.v), never from an old per-browser key', async ({}, info) => {
+  test.skip(info.project.name !== 'desktop-1440', 'browser-independent, run once');
+  expect(run({ variant: 'b' }).sent.every((b) => b.variant === 'b')).toBe(true);
+  expect(run({ variant: 'a' }).sent.every((b) => b.variant === 'a')).toBe(true);
+  expect(run({ store: { po_v: 'b' } }).sent.every((b) => b.variant === '')).toBe(true);
+  expect(run({ variant: 'zz' }).sent.every((b) => b.variant === '')).toBe(true);
 });

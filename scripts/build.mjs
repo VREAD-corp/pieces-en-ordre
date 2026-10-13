@@ -9,6 +9,8 @@ import { PAGES } from './pages.mjs';
 const ROOT = new URL('..', import.meta.url).pathname;
 // Cache-busting for mesure.js: crawlers' renderers keep an old copy of the same URL.
 const MESURE_V = crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, 'static/mesure.js'))).digest('hex').slice(0, 8);
+// cro.js (Octave behaviour counters + A/B framework), vendored byte-identical from octave-checkout/gas/web/cro.js.
+const CRO_V = crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, 'static/cro.js'))).digest('hex').slice(0, 8);
 const OUT = path.join(ROOT, 'docs');
 const BASE = '/pieces-en-ordre/';
 const ORIGIN = 'https://outils.vread.fr';
@@ -17,6 +19,12 @@ export const ENDPOINT = 'https://script.google.com/macros/s/' + JSON.parse(fs.re
 
 export const PAYS_SLUG = { ma: 'maroc', dz: 'algerie', tn: 'tunisie', sn: 'senegal', ci: 'cote-d-ivoire', cm: 'cameroun' };
 export const MOTIF_SLUG = { famille: 'visite-familiale', tourisme: 'tourisme', affaires: 'affaires', stage: 'stage' };
+
+// Pack price test (read by app.js and mesure.js through octaveCro.v('price')): a = 19 €, b = 29 €, uniform draw once
+// per browser tab (sessionStorage, gone when the tab closes); ?prix=a or ?prix=b forces one. Exposed on the pages
+// that show a price ([data-price]): home, hôte, Pack, order page and the 24 lists.
+export const OCTAVE_XP = [{ id: 'price', variants: ['a', 'b'], mode: 'tab', param: 'prix',
+  pages: `^${BASE}(index\\.html)?$|^${BASE}(hote|pack|commander|${Object.values(PAYS_SLUG).join('|')})/` }];
 
 export const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -53,6 +61,8 @@ ${noindex ? '<meta name="robots" content="noindex">' : ''}
 <link rel="icon" href="${BASE}favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="${BASE}style.css">
 ${jsonld}
+<script>window.OCTAVE_XP=${JSON.stringify(OCTAVE_XP)};</script>
+<script src="${BASE}cro.js?v=${CRO_V}" data-site="pieces-en-ordre" data-api="${ENDPOINT}" data-hosts="outils.vread.fr" data-cta="[data-mesure=cta_click]" defer></script>
 </head>
 <body class="${pageClass}">
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -71,7 +81,7 @@ ${body}
     <p><strong>Pièces en ordre</strong> est un service de documentation en libre-service édité par READ FRANCE SAS (SIREN 988 741 773, 11 rue Rouvet, 75019 Paris). Contact : <a href="mailto:octave@vread.fr">octave@vread.fr</a>.</p>
     <p>Service indépendant, non affilié aux autorités. Nous ne prenons pas de rendez-vous, ne déposons pas de dossier, ne vendons aucun créneau et ne représentons personne. Les informations ne constituent pas un conseil juridique : la consultation juridique rémunérée est réservée aux professions réglementées (loi n° 71-1130, art. 54). Seul le consulat décide.</p>
     <p class="foot-links"><a href="${BASE}mentions-legales/">Mentions légales</a><a href="${BASE}confidentialite/">Confidentialité (RGPD)</a><a href="${BASE}conditions/">Conditions et avertissement</a><a href="${BASE}sources/">Sources officielles</a><a href="${BASE}faux-documents/">Faux documents : les risques</a></p>
-    <p class="small">Textes officiels cités : France-Visas (licence etalab-2.0), Service-public.fr, Légifrance, EUR-Lex. Dernière vérification : ${VERIFIED}. Mesure d’audience anonyme, sans cookie.</p>
+    <p class="small">Textes officiels cités : France-Visas (licence etalab-2.0), Service-public.fr, Légifrance, EUR-Lex. Dernière vérification : ${VERIFIED}. Mesure d’audience et de comportement anonyme et agrégée, sans cookie ni identifiant (<a href="${BASE}confidentialite/">détails</a>).</p>
   </div>
 </footer>
 <script src="${BASE}mesure.js?v=${MESURE_V}" defer></script>
@@ -109,7 +119,7 @@ function listHtml(cc, fileKey) {
     cond.push(...cItems);
   }
   const fee = data.fee ? esc(data.fee.replace('Le montant à acquitter est de : ', '').replace(/^90\.00 euros\.?/, '90 €').replace(/\.$/, '').replace(/^0\.00 euros\.?/, '0 € (exonération)')) : '90 € pour un adulte (FAQ France-Visas)';
-  return { html: main.join('\n') + (cond.length ? `<details class="cond"><summary>Cas particuliers (passeport officiel, résidence dans un autre pays)</summary><ul>${cond.join('')}</ul></details>` : ''), count: idx, fee };
+  return { html: main.join('\n') + (cond.length ? `<details class="cond" id="cas-particuliers-${fileKey}"><summary>Cas particuliers (passeport officiel, résidence dans un autre pays)</summary><ul>${cond.join('')}</ul></details>` : ''), count: idx, fee };
 }
 
 function checklistPage(cc, mk) {
@@ -127,7 +137,7 @@ function checklistPage(cc, mk) {
 <h1>${esc(m.label)} en France, demande déposée ${esc(p.of)} : la liste des pièces</h1>
 <p class="lede">Visa de court séjour (Schengen, 90 jours au plus). Liste reprise de l’« Assistant visa » de France-Visas pour un passeport ordinaire ${esc(p.adj)} et une résidence ${esc(p.of)}, lue le ${VERIFIED}. Chaque pièce est suivie de la raison pour laquelle le consulat la demande.</p>
 <div class="tools noprint"><p class="progress" aria-live="polite"><span data-done>0</span> pièce(s) prête(s) sur ${total}</p><button type="button" class="btn ghost" data-print>Imprimer la liste</button><button type="button" class="btn ghost" data-reset>Tout décocher</button></div>
-<aside class="depot">
+<aside class="depot" data-section="depot">
   <h2>Où et quand déposer</h2>
   <dl>
     <dt>Prestataire</dt><dd>${esc(p.provider)} (${esc(p.centres)}). <a href="${p.providerUrl}" rel="noopener">Site du prestataire</a></dd>
@@ -139,8 +149,8 @@ function checklistPage(cc, mk) {
   ${p.notes.map(n => `<p class="note">${esc(n)}</p>`).join('')}
   <p class="small">Source : <a href="${p.url}" rel="noopener">page ${esc(p.name)} de France-Visas</a>, vérifiée le ${VERIFIED}.</p>
 </aside>
-${lists}
-<section class="rdv">
+<div data-section="liste">${lists}</div>
+<section class="rdv" data-section="rendez-vous">
   <h2>Le jour du rendez-vous</h2>
   <ul>
     <li>Le formulaire (CERFA) et le récépissé France-Visas imprimés en version définitive, sans la mention « BROUILLON ». France-Visas prévient : « En cas d’absence d’un document présent sur votre récépissé, votre demande de visa peut être refusée. »</li>
@@ -150,16 +160,16 @@ ${lists}
   </ul>
   <p class="small">Sources : ${src(['fvActu', 'fvDemarche'])}.</p>
 </section>
-<section class="warn">
+<section class="warn" data-section="faux">
   <h2>Ce que nous ne ferons jamais</h2>
   <p>Fausse réservation, relevé bancaire « arrangé », fausse invitation, attestation de complaisance : ces pièces mènent au refus (motifs 1, 10 et 12 du formulaire officiel) et exposent à des poursuites. Le faux et l’usage de faux sont punis de 3 ans d’emprisonnement et de 45 000 € d’amende (Code pénal, art. 441-1). <a href="${BASE}faux-documents/">Voir les risques et les textes</a>.</p>
 </section>
-<section class="pack-teaser noprint">
+<section class="pack-teaser noprint" data-section="pack">
   <h2>Pack dossier ${esc(p.name)}, ${esc(m.short)}</h2>
   <p>La même liste en PDF à imprimer, avec une colonne « original / copie / prêt », la checklist de l’hôte pour l’attestation d’accueil, un modèle de lettre de présentation, un modèle d’itinéraire et un calendrier de J-30 au rendez-vous. Le paiement peut être fait par l’hôte en France, par carte, en euros.</p>
   <p><a class="btn" href="${BASE}commander/?pays=${cc}&amp;motif=${mk}" data-mesure="cta_click">Commander le Pack, <span data-price>19</span> €</a> <a href="${BASE}pack/">Voir le contenu du Pack</a></p>
 </section>
-<section class="sources-mini"><h2>Sources de cette page</h2><p>${src(['assistant', 'codeVisas', 'fvFaq'])} ; <a href="${p.url}" rel="noopener">France-Visas, page ${esc(p.name)}</a>. Toutes vérifiées le ${VERIFIED}.</p>
+<section class="sources-mini" data-section="sources"><h2>Sources de cette page</h2><p>${src(['assistant', 'codeVisas', 'fvFaq'])} ; <a href="${p.url}" rel="noopener">France-Visas, page ${esc(p.name)}</a>. Toutes vérifiées le ${VERIFIED}.</p>
 <p class="small">Les listes peuvent changer. Avant le rendez-vous, comparez avec l’<a href="https://france-visas.gouv.fr/assistant-visa" rel="noopener">Assistant visa</a> : c’est la référence. Si votre situation sort de ces cas (mineur, passeport non ordinaire, autre nationalité), utilisez directement l’Assistant visa.</p></section>
 `;
   const description = `${m.label}, dépôt ${p.of} : ${total} pièces de la liste officielle France-Visas, avec pourquoi chacune est demandée, les délais et les frais (${p.provider}). Vérifié le ${VERIFIED}.`;

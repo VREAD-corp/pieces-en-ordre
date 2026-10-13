@@ -6,10 +6,17 @@
  *                A hit flagged `excluded` by mesure.js (our tests with octave_notrack=1, navigator.webdriver,
  *                bot or headless user agent, decided in the browser; the user agent is never sent) is counted
  *                in the `Exclus` tab by reason instead, so the summary shows counted and raw views.
+ *                With `kind: 'cro'` (once-per-page batch of cro.js): behaviour counters and A/B results, handled
+ *                by src/Cro.js (vendored byte-identical from octave-checkout) into the `Comportement` and
+ *                `Experiences` tabs (daily counters only: no identifier, nothing typed by a visitor).
  *   preorder     "Pack dossier" fake door: e-mail + choices, with consent (Interest tab). No payment taken.
  *   rights       withdraw / erase / access request by e-mail (Requests tab)
+ *   cro          aggregated behaviour + A/B summary for the CRO report (key whose SHA-256 is the Script
+ *                Property CRO_KEY_SHA256; optional from/to or days)
+ *   cro_init     POST only: stores the SHA-256 of the CRO read key once (refuses to change it afterwards)
  *   ping         health check
- *   summary      counts for the operator (admin key; never returns e-mails)
+ *   summary      counts for the operator (admin key; never returns e-mails), with `cro` (croSummary_; optional
+ *                from/to, default: everything)
  *   purge_tests  deletes rows created by automated tests (admin key)
  *
  * Never collected: passport number, names of travellers, documents, dates of birth, IP (Apps Script never
@@ -42,19 +49,28 @@ var EXCL_KEYS = 6;
 // legacy: a hit without `v` comes from a pre-2026-10-13 mesure.js, which crawlers' renderers keep cached.
 var EXCL_REASONS = ['webdriver', 'bot', 'notrack', 'legacy'];
 
+// CRO module (src/Cro.js): same site, same spreadsheet, same Paris dates and page names as the Stats tab.
+var CRO_SITES_ = APP.sites;
+var CRO_EXPERIMENTS_ = { price: ['a', 'b'] }; // the site's OCTAVE_XP: Pack price 19 € (a) or 29 € (b)
+function croBook_() { return ss_(); }
+function croPage_(site, page) { return trackPage_(page); }
+
 function doGet(e) { return handle_(e, (e && e.parameter) || {}); }
 
 function doPost(e) {
   var req = {};
   try { req = JSON.parse((e && e.postData && e.postData.contents) || '{}') || {}; } catch (err) { return json_({ ok: false, error: 'bad_json' }); }
-  return handle_(e, req);
+  return handle_(e, req, true);
 }
 
-function handle_(e, req) {
+function handle_(e, req, post) {
   var action = String((e && e.parameter && e.parameter.action) || req.action || '');
   try {
     switch (action) {
-      case 'track': return json_(track_(req));
+      // kind 'cro': the once-per-page behaviour batch of cro.js (src/Cro.js), before our own track validation.
+      case 'track': return json_(req.kind === 'cro' ? croTrack_(req) : track_(req));
+      case 'cro': return json_(croAction_(req));
+      case 'cro_init': return json_(post ? croInit_(req) : { ok: false, error: 'method_not_allowed' });
       case 'preorder': return json_(preorder_(req));
       case 'rights': return json_(rights_(req));
       case 'summary': return json_(summary_(req));
@@ -312,6 +328,8 @@ function summary_(req) {
   Object.keys(out.stats).forEach(function (k) { var m = /^(\S+) view( \S+)?$/.exec(k); if (m) (out.views[m[1]] = out.views[m[1]] || { counted: 0, excluded: 0, raw: 0 }).counted += out.stats[k]; });
   Object.keys(out.excluded).forEach(function (k) { var m = /^(\S+) view( \S+)? \|/.exec(k); if (m) (out.views[m[1]] = out.views[m[1]] || { counted: 0, excluded: 0, raw: 0 }).excluded += out.excluded[k]; });
   Object.keys(out.views).forEach(function (d) { out.views[d].raw = out.views[d].counted + out.views[d].excluded; });
+  var day = /^\d{4}-\d{2}-\d{2}$/;
+  out.cro = croSummary_(day.test(String(req.from || '')) ? String(req.from) : '2000-01-01', day.test(String(req.to || '')) ? String(req.to) : parisDate_(now_()));
   if (req.email) out.hasEmail = su.getLastRow() >= 2 && su.getRange(2, 3, su.getLastRow() - 1, 1).getValues().some(function (r) { return String(r[0]) === String(req.email).toLowerCase(); });
   return out;
 }

@@ -5,10 +5,10 @@
   var SLUG_M = { famille: 'visite-familiale', tourisme: 'tourisme', affaires: 'affaires', stage: 'stage' };
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }
 
-  // Price test: 19 € (a) or 29 € (b), drawn once per browser.
-  var variant = store('po_v');
-  if (variant !== 'a' && variant !== 'b') { variant = Math.random() < 0.5 ? 'a' : 'b'; store('po_v', variant); }
+  // Price test: 19 € (a) or 29 € (b), drawn once per tab by cro.js (OCTAVE_XP 'price', ?prix=a|b forces one).
+  var variant = (window.octaveCro && window.octaveCro.v('price')) || '';
   var price = variant === 'b' ? '29' : '19';
+  store('po_v', null); // the old per-browser draw (before 2026-10-13) is no longer kept
   document.querySelectorAll('[data-price]').forEach(function (el) { el.textContent = price; });
 
   // Picker on the home page: go to the static list.
@@ -60,6 +60,7 @@
         .then(function (j) {
           if (!j.ok) throw new Error(j.error || 'erreur');
           form.reset(); form.classList.add('sent');
+          if (window.octaveCro) window.octaveCro.goal('preorder');
           msg.textContent = 'C’est noté. Rien n’a été débité. Vous recevrez un seul e-mail à l’ouverture du paiement, au prix de ' + price + ' €. En attendant, les listes en ligne sont gratuites.';
           msg.classList.add('okmsg');
         })

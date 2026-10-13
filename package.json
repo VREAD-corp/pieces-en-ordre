@@ -5,7 +5,8 @@
   "scripts": {
     "build": "node scripts/parse-assistant.mjs && node scripts/build.mjs",
     "serve": "node scripts/serve.mjs",
-    "test": "playwright test",
+    "test": "npm run test:cro && playwright test",
+    "test:cro": "node tests/cro.check.mjs static/cro.js && node tests/cro-gas.check.mjs gas/src/Cro.js",
     "test:live": "BASE_URL=https://outils.vread.fr/pieces-en-ordre/ playwright test"
   },
   "devDependencies": { "@playwright/test": "1.64.0" }

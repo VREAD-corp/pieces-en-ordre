@@ -5,7 +5,7 @@ import os from 'os';
 const LIVE = !!process.env.BASE_URL;
 const PAYS = ['maroc', 'algerie', 'tunisie', 'senegal', 'cote-d-ivoire', 'cameroun'];
 const MOTIFS = ['visite-familiale', 'tourisme', 'affaires', 'stage'];
-const q = LIVE ? '?utm_medium=e2e-test&octave_notrack=1' : '';
+const q = LIVE ? '?utm_medium=e2e-test&octave_notrack=1' : '?octave_notrack=1';
 // Our runs never count as visits: octave_notrack=1 (remembered in localStorage) sends them to the "Exclus" counters.
 test.beforeEach(async ({ page }) => { await page.addInitScript(() => localStorage.setItem('octave_notrack', '1')); });
 
@@ -69,14 +69,54 @@ test('all 24 lists render with official text, sources and dates', async ({ page 
   }
 });
 
-test('price test: one price per visitor, 19 or 29 €, same on every page', async ({ page }) => {
+test('price test (cro.js OCTAVE_XP price): one price per tab, 19 or 29 €, same on every page', async ({ page }) => {
   await page.goto('pack/' + q);
-  const price = await page.locator('[data-price]').first().textContent();
-  expect(['19', '29']).toContain(price);
+  const variant = await page.evaluate(() => window.octaveCro.v('price'));
+  expect(['a', 'b']).toContain(variant);
+  const price = variant === 'b' ? '29' : '19';
+  await expect(page.locator('html')).toHaveAttribute('data-xp-price', variant);
+  for (const el of await page.locator('[data-price]').all()) await expect(el).toHaveText(price);
   await page.goto('maroc/tourisme/' + q);
   await expect(page.locator('[data-price]').first()).toHaveText(price);
   await page.goto('commander/' + q);
   await expect(page.locator('h1 [data-price]')).toHaveText(price);
+  expect(await page.evaluate(() => sessionStorage.getItem('oxp_price'))).toBe(variant);
+});
+
+test('price test: ?prix=b forces 29 € for the tab, ?prix=a 19 €; the old per-browser key is removed', async ({ page }) => {
+  await page.addInitScript(() => { if (!sessionStorage.getItem('seeded')) { sessionStorage.setItem('seeded', '1'); localStorage.setItem('po_v', 'a'); } });
+  await page.goto('pack/' + q + '&prix=b');
+  await expect(page.locator('html')).toHaveAttribute('data-xp-price', 'b');
+  for (const el of await page.locator('[data-price]').all()) await expect(el).toHaveText('29');
+  expect(await page.evaluate(() => localStorage.getItem('po_v'))).toBeNull();
+  await page.goto('hote/' + q);
+  await expect(page.locator('[data-price]').first()).toHaveText('29');
+  await page.goto('commander/' + q + '&prix=a');
+  await expect(page.locator('h1 [data-price]')).toHaveText('19');
+  expect(await page.evaluate(() => window.octaveCro.v('price'))).toBe('a');
+});
+
+test('every page loads cro.js (byte-identical, before the site scripts) with the price experiment', async ({ page, request }) => {
+  const canonical = fs.readFileSync(new URL('../static/cro.js', import.meta.url));
+  const src = await page.goto('./' + q).then(() => page.locator('script[src*="cro.js"]').getAttribute('src'));
+  expect(Buffer.from(await (await request.get(new URL(src, page.url()).href)).body()).equals(canonical)).toBe(true);
+  const docs = new URL('../docs/', import.meta.url).pathname;
+  const files = fs.readdirSync(docs, { recursive: true }).filter((f) => f.endsWith('.html'));
+  expect(files.length).toBeGreaterThan(30);
+  for (const f of files) {
+    const html = fs.readFileSync(docs + f, 'utf8');
+    const i = html.indexOf('/pieces-en-ordre/cro.js?v=');
+    expect(i, f).toBeGreaterThan(html.indexOf('window.OCTAVE_XP='));
+    expect(html.indexOf('window.OCTAVE_XP='), f).toBeGreaterThan(0);
+    expect(i, f).toBeLessThan(html.indexOf('/pieces-en-ordre/mesure.js'));
+    expect(i, f).toBeLessThan(html.indexOf('/pieces-en-ordre/app.js'));
+    expect(html, f).toMatch(/<script src="[^"]*cro\.js\?v=[0-9a-f]{8}" data-site="pieces-en-ordre" data-api="https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec" data-hosts="outils\.vread\.fr" data-cta="\[data-mesure=cta_click\]" defer><\/script>/);
+  }
+  const xp = await page.evaluate(() => window.OCTAVE_XP);
+  expect(xp).toEqual([expect.objectContaining({ id: 'price', variants: ['a', 'b'], mode: 'tab', param: 'prix' })]);
+  const re = new RegExp(xp[0].pages);
+  for (const p of ['/pieces-en-ordre/', '/pieces-en-ordre/index.html', '/pieces-en-ordre/hote/', '/pieces-en-ordre/pack/', '/pieces-en-ordre/commander/', '/pieces-en-ordre/cameroun/stage/']) expect(re.test(p), p).toBe(true);
+  for (const p of ['/pieces-en-ordre/refus/', '/pieces-en-ordre/confidentialite/', '/pieces-en-ordre/sources/', '/pieces-en-ordre/nope']) expect(re.test(p), p).toBe(false);
 });
 
 test('pack page shows real PDF pages and limits', async ({ page }) => {
@@ -96,7 +136,7 @@ test('order page is an honest fake door: validation, consent, no passport data',
     if (body.includes('"preorder"')) { posted = JSON.parse(body); return route.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true,"updated":false}' }); }
     return route.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true}' });
   });
-  await page.goto('commander/?pays=dz&motif=famille&role=hote' + (LIVE ? '&utm_medium=e2e-test&octave_notrack=1' : ''));
+  await page.goto('commander/?pays=dz&motif=famille&role=hote&octave_notrack=1' + (LIVE ? '&utm_medium=e2e-test' : ''));
   await expect(page.locator('.note-box')).toContainText('Le paiement en ligne n’est pas encore ouvert');
   await expect(page.locator('select[name=country]')).toHaveValue('dz');
   await expect(page.locator('input[name=role][value=hote]')).toBeChecked();
@@ -111,9 +151,13 @@ test('order page is an honest fake door: validation, consent, no passport data',
   await page.check('input[name=consent]');
   await page.click('#octave-pay button[type=submit]');
   await expect(page.locator('.form-msg')).toContainText('Rien n’a été débité', { timeout: 30000 });
+  // cro.js goal: the successful pre-order counts once per tab for the price experiment (nothing is sent under octave_notrack=1).
+  expect(await page.evaluate(() => sessionStorage.getItem('oxp_price_preorder'))).toBe('1');
   if (!LIVE) {
     expect(posted).toMatchObject({ action: 'preorder', email, country: 'dz', purpose: 'famille', role: 'hote', consent: true });
-    expect(['pack-19', 'pack-29']).toContain(posted.offer);
+    expect(['a', 'b']).toContain(posted.variant);
+    expect(posted.offer).toBe(posted.variant === 'b' ? 'pack-29' : 'pack-19');
+    await expect(page.locator('.form-msg')).toContainText(posted.variant === 'b' ? '29 €' : '19 €');
   }
 });
 

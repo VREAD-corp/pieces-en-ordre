@@ -1,7 +1,8 @@
 /*! audience anonyme, sans cookie (même principe que octave-checkout/gas/web/mesure.js). Tests (?octave_notrack=1), navigateurs automatisés et robots : compteur « exclu » à part ; l'user agent est lu ici, jamais envoyé. */
 ((n,l,d)=>{let p=l.pathname,q=new URLSearchParams(l.search),A=(k,f)=>d.addEventListener(k,f,!0),b,t,v,x='',s,go;
 if(n.doNotTrack=='1'||n.globalPrivacyControl||l.hostname!='outils.vread.fr')return;
-try{s=localStorage;v=s.getItem('po_v');if(q.has('octave_notrack'))q.get('octave_notrack')=='1'?s.setItem('octave_notrack','1'):s.removeItem('octave_notrack');s.getItem('octave_notrack')=='1'&&(x='notrack')}catch(e){}
+v=window.octaveCro&&octaveCro.v('price');
+try{s=localStorage;if(q.has('octave_notrack'))q.get('octave_notrack')=='1'?s.setItem('octave_notrack','1'):s.removeItem('octave_notrack');s.getItem('octave_notrack')=='1'&&(x='notrack')}catch(e){}
 x=x||(q.get('octave_notrack')=='1'?'notrack':n.webdriver?'webdriver':/bot\b|crawl|spider|slurp|headless|lighthouse|pagespeed|inspectiontool|googleother|mediapartners|bingpreview|phantom|puppeteer|playwright|selenium/i.test(n.userAgent||'')?'bot':'');
 b={v:2,site:'pieces-en-ordre',page:p,ref_domain:d.referrer.split('/')[2],device:innerWidth<768?'mobile':'desktop',variant:v=='a'||v=='b'?v:''};
 if(x)b.excluded=x;
