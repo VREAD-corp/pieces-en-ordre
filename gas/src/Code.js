@@ -2,7 +2,10 @@
  * Pièces en ordre: web app (READ FRANCE SAS). Standalone Apps Script, separate from octave-checkout.
  *
  * Actions (POST text/plain JSON, or GET with the same fields as query parameters):
- *   track        cookieless, anonymous daily counters (Stats tab), same pattern as octave-checkout Track.js
+ *   track        cookieless, anonymous daily counters (Stats tab), same pattern as octave-checkout Track.js.
+ *                A hit flagged `excluded` by mesure.js (our tests with octave_notrack=1, navigator.webdriver,
+ *                bot or headless user agent, decided in the browser; the user agent is never sent) is counted
+ *                in the `Exclus` tab by reason instead, so the summary shows counted and raw views.
  *   preorder     "Pack dossier" fake door: e-mail + choices, with consent (Interest tab). No payment taken.
  *   rights       withdraw / erase / access request by e-mail (Requests tab)
  *   ping         health check
@@ -34,6 +37,9 @@ var INTEREST_HEADER = ['created_at', 'updated_at', 'email', 'role', 'country', '
 var REQUEST_HEADER = ['created_at', 'type', 'email_sha256', 'message', 'matched_rows', 'status', 'test'];
 var STATS_HEADER = ['date', 'site', 'page', 'event', 'variant', 'source', 'medium', 'campaign', 'count', 'mobile', 'desktop', 'updated_at'];
 var STATS_KEYS = 8;
+var EXCL_HEADER = ['date', 'site', 'page', 'event', 'variant', 'reason', 'count', 'mobile', 'desktop', 'updated_at'];
+var EXCL_KEYS = 6;
+var EXCL_REASONS = ['webdriver', 'bot', 'notrack'];
 
 function doGet(e) { return handle_(e, (e && e.parameter) || {}); }
 
@@ -64,7 +70,7 @@ function handle_(e, req) {
 }
 
 /** Run once from the editor (or let the first hit do it): creates the spreadsheet and logs its URL. */
-function setup() { var ss = ss_(); tab_('Stats', STATS_HEADER); tab_('Interest', INTEREST_HEADER); tab_('Requests', REQUEST_HEADER); console.log(ss.getUrl()); return ss.getUrl(); }
+function setup() { var ss = ss_(); tab_('Stats', STATS_HEADER); tab_('Exclus', EXCL_HEADER); tab_('Interest', INTEREST_HEADER); tab_('Requests', REQUEST_HEADER); console.log(ss.getUrl()); return ss.getUrl(); }
 
 /* ---------- helpers ---------- */
 
@@ -157,35 +163,45 @@ function validateTrack_(req) {
     source: token_(req.utm_source, 50) || ref || '(direct)',
     medium: token_(req.utm_medium, 30), campaign: token_(req.utm_campaign, 50),
     device: req.device === 'mobile' || req.device === 'desktop' ? req.device : '',
+    reason: EXCL_REASONS.indexOf(String(req.excluded || '')) >= 0 ? String(req.excluded) : (req.excluded ? 'bot' : ''),
   };
 }
 
 function track_(req) {
   var hit = validateTrack_(req);
   if (!rateOk_('track', APP.ratePerMin)) return { ok: false, error: 'rate_limited' };
-  withLock_(function () { incrementStat_(hit); });
+  withLock_(function () { if (hit.reason) incrementExcluded_(hit); else incrementStat_(hit); });
   return { ok: true };
 }
 
 function incrementStat_(h) {
-  var sh = tab_('Stats', STATS_HEADER);
-  var key = [h.date, h.site, h.page, h.event, h.variant, h.source, h.medium, h.campaign].join('\u001f');
+  incrementRow_('Stats', STATS_HEADER, STATS_KEYS, [h.date, h.site, h.page, h.event, h.variant, h.source, h.medium, h.campaign], h.device);
+}
+
+/** Hits that are not visits (tests, automated browsers, crawlers): same daily counters, keyed by reason. */
+function incrementExcluded_(h) {
+  incrementRow_('Exclus', EXCL_HEADER, EXCL_KEYS, [h.date, h.site, h.page, h.event, h.variant, h.reason], h.device);
+}
+
+function incrementRow_(name, header, nKeys, keys, device) {
+  var sh = tab_(name, header);
+  var key = keys.join('\u001f');
   var last = sh.getLastRow();
   var rowNum = 0;
   var n = Math.min(Math.max(last - 1, 0), 3000);
   if (n > 0) {
-    var vals = sh.getRange(last - n + 1, 1, n, STATS_KEYS).getValues();
+    var vals = sh.getRange(last - n + 1, 1, n, nKeys).getValues();
     for (var i = vals.length - 1; i >= 0; i--) {
-      if (cell_(vals[i][0]) < h.date) break;
+      if (cell_(vals[i][0]) < keys[0]) break;
       if (vals[i].map(cell_).join('\u001f') === key) { rowNum = last - n + 1 + i; break; }
     }
   }
   var stamp = now_().toISOString();
   if (!rowNum) {
-    sh.appendRow([txt_(h.date), h.site, txt_(h.page), h.event, h.variant, txt_(h.source), txt_(h.medium), txt_(h.campaign), 1, h.device === 'mobile' ? 1 : 0, h.device === 'desktop' ? 1 : 0, stamp]);
+    sh.appendRow(keys.map(txt_).concat([1, device === 'mobile' ? 1 : 0, device === 'desktop' ? 1 : 0, stamp]));
   } else {
-    var c = sh.getRange(rowNum, STATS_KEYS + 1, 1, 3).getValues()[0];
-    sh.getRange(rowNum, STATS_KEYS + 1, 1, 4).setValues([[Number(c[0] || 0) + 1, Number(c[1] || 0) + (h.device === 'mobile' ? 1 : 0), Number(c[2] || 0) + (h.device === 'desktop' ? 1 : 0), stamp]]);
+    var c = sh.getRange(rowNum, nKeys + 1, 1, 3).getValues()[0];
+    sh.getRange(rowNum, nKeys + 1, 1, 4).setValues([[Number(c[0] || 0) + 1, Number(c[1] || 0) + (device === 'mobile' ? 1 : 0), Number(c[2] || 0) + (device === 'desktop' ? 1 : 0), stamp]]);
   }
 }
 
@@ -265,7 +281,7 @@ function rights_(req) {
 
 function summary_(req) {
   checkAdmin_(req);
-  var out = { ok: true, sheetUrl: ss_().getUrl(), interest: { real: 0, test: 0, active: 0, byOffer: {}, byRole: {}, byCountry: {}, byPurpose: {} }, requests: { real: 0, test: 0, open: 0 }, stats: {} };
+  var out = { ok: true, sheetUrl: ss_().getUrl(), interest: { real: 0, test: 0, active: 0, byOffer: {}, byRole: {}, byCountry: {}, byPurpose: {} }, requests: { real: 0, test: 0, open: 0 }, stats: {}, excluded: {}, views: {} };
   var su = tab_('Interest', INTEREST_HEADER);
   if (su.getLastRow() >= 2) su.getRange(2, 1, su.getLastRow() - 1, INTEREST_HEADER.length).getValues().forEach(function (r) {
     var test = r[12] === 'yes';
@@ -286,6 +302,15 @@ function summary_(req) {
     var k = cell_(r[0]) + ' ' + r[3] + (r[4] ? ' ' + r[4] : '');
     out.stats[k] = (out.stats[k] || 0) + Number(r[8] || 0);
   });
+  var ex = tab_('Exclus', EXCL_HEADER);
+  if (ex.getLastRow() >= 2) ex.getRange(2, 1, ex.getLastRow() - 1, EXCL_HEADER.length).getValues().forEach(function (r) {
+    var k = cell_(r[0]) + ' ' + r[3] + (r[4] ? ' ' + r[4] : '') + ' | ' + r[5];
+    out.excluded[k] = (out.excluded[k] || 0) + Number(r[6] || 0);
+  });
+  // Views per day: counted (visits), excluded (tests, automated browsers, crawlers) and raw (both).
+  Object.keys(out.stats).forEach(function (k) { var m = /^(\S+) view( \S+)?$/.exec(k); if (m) (out.views[m[1]] = out.views[m[1]] || { counted: 0, excluded: 0, raw: 0 }).counted += out.stats[k]; });
+  Object.keys(out.excluded).forEach(function (k) { var m = /^(\S+) view( \S+)? \|/.exec(k); if (m) (out.views[m[1]] = out.views[m[1]] || { counted: 0, excluded: 0, raw: 0 }).excluded += out.excluded[k]; });
+  Object.keys(out.views).forEach(function (d) { out.views[d].raw = out.views[d].counted + out.views[d].excluded; });
   if (req.email) out.hasEmail = su.getLastRow() >= 2 && su.getRange(2, 3, su.getLastRow() - 1, 1).getValues().some(function (r) { return String(r[0]) === String(req.email).toLowerCase(); });
   return out;
 }

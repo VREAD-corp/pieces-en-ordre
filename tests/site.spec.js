@@ -5,7 +5,9 @@ import os from 'os';
 const LIVE = !!process.env.BASE_URL;
 const PAYS = ['maroc', 'algerie', 'tunisie', 'senegal', 'cote-d-ivoire', 'cameroun'];
 const MOTIFS = ['visite-familiale', 'tourisme', 'affaires', 'stage'];
-const q = LIVE ? '?utm_medium=e2e-test' : '';
+const q = LIVE ? '?utm_medium=e2e-test&octave_notrack=1' : '';
+// Our runs never count as visits: octave_notrack=1 (remembered in localStorage) sends them to the "Exclus" counters.
+test.beforeEach(async ({ page }) => { await page.addInitScript(() => localStorage.setItem('octave_notrack', '1')); });
 
 function watchErrors(page) {
   const errors = [];
@@ -32,8 +34,6 @@ test('home: tool above the fold, independence and legal footer', async ({ page }
 });
 
 test('picker opens the right list; ticks persist on this device only', async ({ page }) => {
-  // The picker navigation drops the utm marker: switch tracking off for this test (Do Not Track).
-  await page.addInitScript(() => Object.defineProperty(navigator, 'doNotTrack', { get: () => '1' }));
   await page.goto('./' + q);
   await page.selectOption('#choisir select[name=pays]', 'dz');
   await page.selectOption('#choisir select[name=motif]', 'famille');
@@ -96,7 +96,7 @@ test('order page is an honest fake door: validation, consent, no passport data',
     if (body.includes('"preorder"')) { posted = JSON.parse(body); return route.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true,"updated":false}' }); }
     return route.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true}' });
   });
-  await page.goto('commander/?pays=dz&motif=famille&role=hote' + (LIVE ? '&utm_medium=e2e-test' : ''));
+  await page.goto('commander/?pays=dz&motif=famille&role=hote' + (LIVE ? '&utm_medium=e2e-test&octave_notrack=1' : ''));
   await expect(page.locator('.note-box')).toContainText('Le paiement en ligne n’est pas encore ouvert');
   await expect(page.locator('select[name=country]')).toHaveValue('dz');
   await expect(page.locator('input[name=role][value=hote]')).toBeChecked();
