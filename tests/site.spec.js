@@ -105,18 +105,18 @@ test('every page loads cro.js (byte-identical, before the site scripts) with the
   expect(files.length).toBeGreaterThan(30);
   for (const f of files) {
     const html = fs.readFileSync(docs + f, 'utf8');
-    const i = html.indexOf('/pieces-en-ordre/cro.js?v=');
+    const i = html.indexOf('/cro.js?v=');
     expect(i, f).toBeGreaterThan(html.indexOf('window.OCTAVE_XP='));
     expect(html.indexOf('window.OCTAVE_XP='), f).toBeGreaterThan(0);
-    expect(i, f).toBeLessThan(html.indexOf('/pieces-en-ordre/mesure.js'));
-    expect(i, f).toBeLessThan(html.indexOf('/pieces-en-ordre/app.js'));
-    expect(html, f).toMatch(/<script src="[^"]*cro\.js\?v=[0-9a-f]{8}" data-site="pieces-en-ordre" data-api="https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec" data-hosts="outils\.vread\.fr" data-cta="\[data-mesure=cta_click\]" defer><\/script>/);
+    expect(i, f).toBeLessThan(html.indexOf('/mesure.js'));
+    expect(i, f).toBeLessThan(html.indexOf('/app.js'));
+    expect(html, f).toMatch(/<script src="[^"]*cro\.js\?v=[0-9a-f]{8}" data-site="pieces-en-ordre" data-api="https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec" data-hosts="pieces-en-ordre\.jalonel\.com outils\.vread\.fr" data-cta="\[data-mesure=cta_click\]" defer><\/script>/);
   }
   const xp = await page.evaluate(() => window.OCTAVE_XP);
   expect(xp).toEqual([expect.objectContaining({ id: 'price', variants: ['a', 'b'], mode: 'tab', param: 'prix' })]);
   const re = new RegExp(xp[0].pages);
-  for (const p of ['/pieces-en-ordre/', '/pieces-en-ordre/index.html', '/pieces-en-ordre/hote/', '/pieces-en-ordre/pack/', '/pieces-en-ordre/commander/', '/pieces-en-ordre/cameroun/stage/']) expect(re.test(p), p).toBe(true);
-  for (const p of ['/pieces-en-ordre/refus/', '/pieces-en-ordre/confidentialite/', '/pieces-en-ordre/sources/', '/pieces-en-ordre/nope']) expect(re.test(p), p).toBe(false);
+  for (const p of ['/', '/index.html', '/hote/', '/pack/', '/commander/', '/cameroun/stage/']) expect(re.test(p), p).toBe(true);
+  for (const p of ['/refus/', '/confidentialite/', '/sources/', '/nope']) expect(re.test(p), p).toBe(false);
 });
 
 test('pack page shows real PDF pages and limits', async ({ page }) => {
@@ -179,7 +179,7 @@ test('every internal link answers 200', async ({ page, request }) => {
   const seen = new Set();
   for (const start of ['./', 'algerie/visite-familiale/', 'pack/', 'refus/', 'hote/', 'sources/']) {
     await page.goto(start + q);
-    const hrefs = await page.$$eval('a[href]', as => as.map(a => a.href).filter(h => h.includes('/pieces-en-ordre/')));
+    const hrefs = await page.$$eval('a[href]', as => as.map(a => a.href).filter(h => h.startsWith(location.origin + '/')));
     for (const h of hrefs) {
       const u = h.split('#')[0];
       if (seen.has(u)) continue; seen.add(u);
@@ -200,6 +200,7 @@ test('sitemap, robots and IndexNow key are served', async ({ request }) => {
   const key = fs.readFileSync(new URL('../data/indexnow-key.txt', import.meta.url), 'utf8').trim();
   const k = await request.get(key + '.txt');
   expect(await k.text()).toBe(key);
+  if (!LIVE) expect(fs.readFileSync(new URL('../docs/CNAME', import.meta.url), 'utf8').trim()).toBe('pieces-en-ordre.jalonel.com');
 });
 
 test.afterAll(async ({ request }) => {

@@ -8,7 +8,7 @@ const src = fs.readFileSync(new URL('../static/mesure.js', import.meta.url), 'ut
 const CHROME = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36';
 const GOOGLEBOT = 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.7390.0 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
 
-function run({ ua = CHROME, webdriver = false, search = '', store = {}, prerendering = false, visibility = 'visible', dnt = '', variant } = {}) {
+function run({ ua = CHROME, webdriver = false, search = '', store = {}, prerendering = false, visibility = 'visible', dnt = '', variant, hostname = 'pieces-en-ordre.jalonel.com' } = {}) {
   const sent = [], listeners = {};
   const doc = {
     referrer: 'https://www.google.com/', prerendering, visibilityState: visibility,
@@ -17,7 +17,7 @@ function run({ ua = CHROME, webdriver = false, search = '', store = {}, prerende
   const ls = { getItem: (k) => (k in store ? store[k] : null), setItem: (k, v) => { store[k] = String(v); }, removeItem: (k) => { delete store[k]; } };
   const ctx = {
     navigator: { userAgent: ua, webdriver, doNotTrack: dnt }, document: doc, localStorage: ls, innerWidth: 1200, URLSearchParams, JSON, Date, String,
-    location: { hostname: 'outils.vread.fr', pathname: '/pieces-en-ordre/pack/', search },
+    location: { hostname, pathname: '/pack/', search },
     fetch: (u, o) => { sent.push(JSON.parse(o.body)); expect(o.credentials).toBe('omit'); return Promise.resolve(); },
   };
   ctx.window = ctx;
@@ -44,6 +44,8 @@ test('mesure.js: bots, webdriver, octave_notrack and prerender are not visits', 
   r = run({ search: '?octave_notrack=0', store: { octave_notrack: '1' } });
   expect(r.sent.every((b) => !('excluded' in b)) && !('octave_notrack' in r.store)).toBe(true);
   expect(run({ dnt: '1' }).sent).toHaveLength(0);
+  expect(run({ hostname: 'outils.vread.fr' }).sent.map((b) => b.event)).toEqual(['view', 'pack_view']);
+  expect(run({ hostname: 'localhost' }).sent).toHaveLength(0);
   r = run({ prerendering: true });
   expect(r.sent).toHaveLength(0);
   r.fire('prerenderingchange');

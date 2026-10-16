@@ -12,8 +12,11 @@ const MESURE_V = crypto.createHash('sha256').update(fs.readFileSync(path.join(RO
 // cro.js (Octave behaviour counters + A/B framework), vendored byte-identical from octave-checkout/gas/web/cro.js.
 const CRO_V = crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, 'static/cro.js'))).digest('hex').slice(0, 8);
 const OUT = path.join(ROOT, 'docs');
-const BASE = '/pieces-en-ordre/';
-const ORIGIN = 'https://outils.vread.fr';
+// Served at the root of its own Jalonel subdomain since 2026-10-16 (was https://outils.vread.fr/pieces-en-ordre/).
+const BASE = '/';
+const ORIGIN = 'https://pieces-en-ordre.jalonel.com';
+// IndexNow key shared by the Jalonel sites, served at the site root (static/<key>.txt).
+const INDEXNOW_KEY = fs.readFileSync(path.join(ROOT, 'data/indexnow-key.txt'), 'utf8').trim();
 const OFFICIAL = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/official.json'), 'utf8'));
 export const ENDPOINT = 'https://script.google.com/macros/s/' + JSON.parse(fs.readFileSync(path.join(ROOT, 'gas/.deployment.json'), 'utf8')).deploymentId + '/exec';
 
@@ -62,7 +65,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : ''}
 <link rel="stylesheet" href="${BASE}style.css">
 ${jsonld}
 <script>window.OCTAVE_XP=${JSON.stringify(OCTAVE_XP)};</script>
-<script src="${BASE}cro.js?v=${CRO_V}" data-site="pieces-en-ordre" data-api="${ENDPOINT}" data-hosts="outils.vread.fr" data-cta="[data-mesure=cta_click]" defer></script>
+<script src="${BASE}cro.js?v=${CRO_V}" data-site="pieces-en-ordre" data-api="${ENDPOINT}" data-hosts="pieces-en-ordre.jalonel.com outils.vread.fr" data-cta="[data-mesure=cta_click]" defer></script>
 </head>
 <body class="${pageClass}">
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -79,6 +82,7 @@ ${body}
 <footer class="foot">
   <div class="wrap">
     <p><strong>Pièces en ordre</strong> est un service de documentation en libre-service édité par READ FRANCE SAS (SIREN 988 741 773, 11 rue Rouvet, 75019 Paris). Contact : <a href="mailto:octave@vread.fr">octave@vread.fr</a>.</p>
+    <p class="brand-line">Une marque <a href="https://jalonel.com/">Jalonel</a>. Jalonel est une marque de READ FRANCE SAS.</p>
     <p>Service indépendant, non affilié aux autorités. Nous ne prenons pas de rendez-vous, ne déposons pas de dossier, ne vendons aucun créneau et ne représentons personne. Les informations ne constituent pas un conseil juridique : la consultation juridique rémunérée est réservée aux professions réglementées (loi n° 71-1130, art. 54). Seul le consulat décide.</p>
     <p class="foot-links"><a href="${BASE}mentions-legales/">Mentions légales</a><a href="${BASE}confidentialite/">Confidentialité (RGPD)</a><a href="${BASE}conditions/">Conditions et avertissement</a><a href="${BASE}sources/">Sources officielles</a><a href="${BASE}faux-documents/">Faux documents : les risques</a></p>
     <p class="small">Textes officiels cités : France-Visas (licence etalab-2.0), Service-public.fr, Légifrance, EUR-Lex. Dernière vérification : ${VERIFIED}. Mesure d’audience et de comportement anonyme et agrégée, sans cookie ni identifiant (<a href="${BASE}confidentialite/">détails</a>).</p>
@@ -212,6 +216,9 @@ fs.copyFileSync(path.join(OUT, '404', 'index.html'), path.join(OUT, '404.html'))
 fs.rmSync(path.join(OUT, '404'), { recursive: true });
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.filter(u => !u.includes('404')).map(u => `<url><loc>${ORIGIN}${u}</loc><lastmod>${today}</lastmod></url>`).join('\n')}\n</urlset>\n`);
-fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /pieces-en-ordre/\nDisallow: /pieces-en-ordre/merci/\nSitemap: ${ORIGIN}${BASE}sitemap.xml\n`);
+fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: ${BASE}\nDisallow: ${BASE}merci/\nSitemap: ${ORIGIN}${BASE}sitemap.xml\n`);
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
+// GitHub Pages custom domain and IndexNow key file at the site root.
+fs.writeFileSync(path.join(OUT, 'CNAME'), new URL(ORIGIN).hostname + '\n');
+fs.writeFileSync(path.join(OUT, INDEXNOW_KEY + '.txt'), INDEXNOW_KEY);
 console.log('built', urls.length, 'indexable pages');

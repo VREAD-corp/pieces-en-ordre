@@ -1,6 +1,6 @@
 /* Pièces en ordre: checkboxes kept on this device only, print, price test, picker, Pack interest form. */
 (function () {
-  var BASE = '/pieces-en-ordre/';
+  var BASE = '/';
   var SLUG_P = { ma: 'maroc', dz: 'algerie', tn: 'tunisie', sn: 'senegal', ci: 'cote-d-ivoire', cm: 'cameroun' };
   var SLUG_M = { famille: 'visite-familiale', tourisme: 'tourisme', affaires: 'affaires', stage: 'stage' };
   function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } }

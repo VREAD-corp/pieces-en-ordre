@@ -5,10 +5,10 @@ export default defineConfig({
   timeout: 60000,
   workers: 2,
   reporter: [['list']],
-  use: { baseURL: process.env.BASE_URL || 'http://localhost:4317/pieces-en-ordre/', screenshot: 'only-on-failure' },
+  use: { baseURL: process.env.BASE_URL || 'http://localhost:4317/', screenshot: 'only-on-failure' },
   projects: [
     { name: 'mobile-390', use: { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true } },
     { name: 'desktop-1440', use: { viewport: { width: 1440, height: 900 } } },
   ],
-  webServer: live ? undefined : { command: 'node scripts/serve.mjs', url: 'http://localhost:4317/pieces-en-ordre/', reuseExistingServer: true },
+  webServer: live ? undefined : { command: 'node scripts/serve.mjs', url: 'http://localhost:4317/', reuseExistingServer: true },
 });
