@@ -9,7 +9,7 @@ Site : https://pieces-en-ordre.jalonel.com/
 https://outils.vread.fr/pieces-en-ordre/ (redirection 301 de GitHub Pages).
 
 - `npm run build` : génère `docs/` (GitHub Pages, branche main, dossier /docs), avec `CNAME` et la clé IndexNow
-  (`data/indexnow-key.txt`, servie à la racine).
+  (`data/indexnow-key.txt`, servie à la racine ; l'ancienne clé `e763889265d047176b03f41c80446c27.txt` reste publiée).
 - `npm test` : contrôles cro.js / Cro.js puis Playwright (390 et 1440 px) sur `docs/` servi à la racine
   (`scripts/serve.mjs`, port 4317) ; `npm run test:live` sur le site en ligne.
 - `gas/` : web app Apps Script autonome (compteurs d'audience sans cookie, formulaire d'intérêt Pack, droits RGPD) ;

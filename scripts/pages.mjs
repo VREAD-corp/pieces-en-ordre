@@ -11,7 +11,7 @@ export function PAGES(c) {
     title: 'Pièces en ordre : checklist du dossier de visa court séjour France',
     description: `Checklist gratuite du dossier de visa court séjour pour la France, déposé au Maroc, en Algérie, en Tunisie, au Sénégal, en Côte d’Ivoire ou au Cameroun. Liste officielle France-Visas, pourquoi chaque pièce compte, vérifiée le ${VERIFIED}.`,
     pageClass: 'home',
-    jsonld: `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebSite', name: 'Pièces en ordre', url: 'https://pieces-en-ordre.jalonel.com' + BASE, inLanguage: 'fr', publisher: { '@type': 'Organization', '@id': 'https://jalonel.com/#org', name: 'Jalonel', url: 'https://jalonel.com/', parentOrganization: { '@type': 'Organization', name: 'READ FRANCE SAS', email: 'octave@vread.fr' } } })}</script>`,
+    jsonld: `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebSite', name: 'Pièces en ordre', url: 'https://pieces-en-ordre.jalonel.com' + BASE, inLanguage: 'fr', publisher: { '@type': 'Organization', '@id': 'https://jalonel.com/#org', name: 'Jalonel', url: 'https://jalonel.com/', parentOrganization: { '@type': 'Organization', name: 'READ FRANCE SAS', identifier: 'SIREN 988741773' } } })}</script>`,
     body: `
 <div class="hero" data-section="hero">
   <div>
@@ -272,7 +272,7 @@ ${Object.values(PAYS).map(p => `<tr><td><a href="${p.url}" rel="noopener">France
     description: 'Données traitées par Pièces en ordre : mesure d’audience et de comportement anonyme et agrégée, sans cookie, tests A/B, e-mail laissé volontairement pour l’ouverture du Pack.',
     body: `
 <h1>Confidentialité</h1>
-<p class="lede">Responsable du traitement : READ FRANCE SAS, 11 rue Rouvet, 75019 Paris, <a href="mailto:octave@vread.fr">octave@vread.fr</a>. Jalonel est une marque de READ FRANCE SAS.</p>
+<p class="lede">Responsable du traitement : READ FRANCE SAS, 11 rue Rouvet, 75019 Paris, <a href="mailto:octave@vread.fr">octave@vread.fr</a>.</p>
 <h2>Ce que nous ne collectons pas</h2>
 <p>Aucun document, aucun numéro de passeport, aucune date de naissance, aucun nom de voyageur. Les listes fonctionnent dans votre navigateur : les cases cochées sont gardées sur votre appareil (stockage local du navigateur) et ne nous sont jamais envoyées. Aucun cookie, aucun traceur publicitaire.</p>
 <h2>Mesure d’audience et de comportement, anonyme et agrégée</h2>
@@ -306,7 +306,7 @@ ${Object.values(PAYS).map(p => `<tr><td><a href="${p.url}" rel="noopener">France
 <p>Il est interdit d’utiliser ce service ou ses modèles pour produire une pièce fausse ou inexacte. Nous n’apportons aucune aide en ce sens.</p>
 <h2>Pack dossier : conditions de vente (applicables à l’ouverture du paiement)</h2>
 <ul>
-  <li>Vendeur : READ FRANCE SAS (Jalonel est une marque de READ FRANCE SAS). Prix en euros, TVA non applicable (art. 293 B du CGI), payable en une fois par carte.</li>
+  <li>Vendeur : READ FRANCE SAS. Prix en euros, TVA non applicable (art. 293 B du CGI), payable en une fois par carte.</li>
   <li>Livraison : lien de téléchargement envoyé par e-mail après paiement.</li>
   <li>Droit de rétractation : contenu numérique fourni sans support matériel. En commandant, l’acheteur demande l’accès immédiat et reconnaît perdre son droit de rétractation dès le début du téléchargement (Code de la consommation, art. L221-28, 13°).</li>
   <li>Si le fichier livré ne correspond pas au pays ou au motif commandé, écrivez à <a href="mailto:octave@vread.fr">octave@vread.fr</a> : nous envoyons le bon fichier ou nous remboursons.</li>

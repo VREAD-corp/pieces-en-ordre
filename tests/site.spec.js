@@ -29,6 +29,7 @@ test('home: tool above the fold, independence and legal footer', async ({ page }
   await expect(page.locator('.indep')).toContainText('non affilié aux autorités');
   const foot = page.locator('footer');
   for (const t of ['READ FRANCE SAS', '988 741 773', 'octave@vread.fr', 'non affilié aux autorités', 'pas un conseil juridique', 'Confidentialité (RGPD)', 'Conditions et avertissement']) await expect(foot).toContainText(t);
+  await expect(foot.getByRole('link', { name: 'Une marque Jalonel' })).toHaveAttribute('href', 'https://jalonel.com/');
   await noHScroll(page);
   expect(errors).toEqual([]);
 });
