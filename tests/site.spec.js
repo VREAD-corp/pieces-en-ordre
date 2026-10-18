@@ -28,7 +28,7 @@ test('home: tool above the fold, independence and legal footer', async ({ page }
   await expect(page.locator('#choisir select[name=pays]')).toBeVisible();
   await expect(page.locator('.indep')).toContainText('non affilié aux autorités');
   const foot = page.locator('footer');
-  for (const t of ['READ FRANCE SAS', '988 741 773', 'octave@vread.fr', 'non affilié aux autorités', 'pas un conseil juridique', 'Confidentialité (RGPD)', 'Conditions et avertissement']) await expect(foot).toContainText(t);
+  for (const t of ['READ FRANCE SAS', '988 741 773', 'contact@jalonel.com', 'non affilié aux autorités', 'pas un conseil juridique', 'Confidentialité (RGPD)', 'Conditions et avertissement']) await expect(foot).toContainText(t);
   await expect(foot.getByRole('link', { name: 'Une marque Jalonel' })).toHaveAttribute('href', 'https://jalonel.com/');
   await noHScroll(page);
   expect(errors).toEqual([]);
@@ -111,7 +111,7 @@ test('every page loads cro.js (byte-identical, before the site scripts) with the
     expect(html.indexOf('window.OCTAVE_XP='), f).toBeGreaterThan(0);
     expect(i, f).toBeLessThan(html.indexOf('/mesure.js'));
     expect(i, f).toBeLessThan(html.indexOf('/app.js'));
-    expect(html, f).toMatch(/<script src="[^"]*cro\.js\?v=[0-9a-f]{8}" data-site="pieces-en-ordre" data-api="https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec" data-hosts="pieces-en-ordre\.jalonel\.com outils\.vread\.fr" data-cta="\[data-mesure=cta_click\]" defer><\/script>/);
+    expect(html, f).toMatch(/<script src="[^"]*cro\.js\?v=[0-9a-f]{8}" data-site="pieces-en-ordre" data-api="https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec" data-hosts="pieces-en-ordre\.jalonel\.com" data-cta="\[data-mesure=cta_click\]" defer><\/script>/);
   }
   const xp = await page.evaluate(() => window.OCTAVE_XP);
   expect(xp).toEqual([expect.objectContaining({ id: 'price', variants: ['a', 'b'], mode: 'tab', param: 'prix' })]);

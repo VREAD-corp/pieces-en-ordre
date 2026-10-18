@@ -64,7 +64,7 @@
           msg.textContent = 'C’est noté. Rien n’a été débité. Vous recevrez un seul e-mail à l’ouverture du paiement, au prix de ' + price + ' €. En attendant, les listes en ligne sont gratuites.';
           msg.classList.add('okmsg');
         })
-        .catch(function () { msg.textContent = 'L’envoi a échoué. Réessayez, ou écrivez à octave@vread.fr.'; msg.classList.add('err'); })
+        .catch(function () { msg.textContent = 'L’envoi a échoué. Réessayez, ou écrivez à contact@jalonel.com.'; msg.classList.add('err'); })
         .then(function () { btn.disabled = false; });
     });
   }

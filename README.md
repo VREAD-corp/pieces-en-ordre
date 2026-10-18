@@ -5,8 +5,7 @@ Cameroun ; visite familiale, tourisme, affaires, stage), reprises de l'Assistant
 chaque pièce. Une marque Jalonel (Jalonel est une marque de READ FRANCE SAS).
 
 Site : https://pieces-en-ordre.jalonel.com/
-2026-10-16 : servi à la racine de pieces-en-ordre.jalonel.com (marque Jalonel). Ancienne adresse :
-https://outils.vread.fr/pieces-en-ordre/ (redirection 301 de GitHub Pages).
+2026-10-16 : servi à la racine de pieces-en-ordre.jalonel.com (marque Jalonel). Contact : contact@jalonel.com.
 
 - `npm run build` : génère `docs/` (GitHub Pages, branche main, dossier /docs), avec `CNAME` et la clé IndexNow
   (`data/indexnow-key.txt`, servie à la racine ; l'ancienne clé `e763889265d047176b03f41c80446c27.txt` reste publiée).

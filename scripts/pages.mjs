@@ -241,7 +241,7 @@ ${Object.values(PAYS).map(p => `<tr><td><a href="${p.url}" rel="noopener">France
 </table>
 <h2>Méthode</h2>
 <p>Les 30 listes de pièces (Maroc, Algérie, Tunisie, Sénégal, Côte d’Ivoire, Cameroun ; visite familiale, tourisme, voyage professionnel, stage salarié, stage étudiant) ont été lues dans l’Assistant visa de France-Visas le ${VERIFIED} avec ces réponses : nationalité et résidence dans le pays, 35 ans, passeport ordinaire, court séjour, destination France métropolitaine, ni conjoint de Français ni membre de famille d’un Européen. Le texte officiel est reproduit tel quel ; les explications « Pourquoi on vous la demande » sont de nous et renvoient au code des visas. Les contenus de France-Visas sont publiés sous licence etalab-2.0.</p>
-<p>Une erreur, un changement de liste ? Écrivez à <a href="mailto:octave@vread.fr">octave@vread.fr</a>.</p>
+<p>Une erreur, un changement de liste ? Écrivez à <a href="mailto:contact@jalonel.com">contact@jalonel.com</a>.</p>
 `,
   });
 
@@ -252,7 +252,7 @@ ${Object.values(PAYS).map(p => `<tr><td><a href="${p.url}" rel="noopener">France
     body: `
 <h1>Mentions légales</h1>
 <h2>Éditeur</h2>
-<p>READ FRANCE SAS, société par actions simplifiée au capital de 1 000 €<br>Siège social : 11 rue Rouvet, 75019 Paris, France<br>SIREN 988 741 773, RCS Paris<br>TVA non applicable, art. 293 B du CGI<br>Directeur de la publication : Tanguy Warsmann, président<br>Contact : <a href="mailto:octave@vread.fr">octave@vread.fr</a></p>
+<p>READ FRANCE SAS, société par actions simplifiée au capital de 1 000 €<br>Siège social : 11 rue Rouvet, 75019 Paris, France<br>SIREN 988 741 773, RCS Paris<br>TVA non applicable, art. 293 B du CGI<br>Directeur de la publication : Tanguy Warsmann, président<br>Contact : <a href="mailto:contact@jalonel.com">contact@jalonel.com</a></p>
 <p>Le site est publié sous la marque <a href="https://jalonel.com/">Jalonel</a>. Jalonel est une marque de READ FRANCE SAS.</p>
 <p class="small">Données d’identification issues de l’annuaire des entreprises (recherche-entreprises.api.gouv.fr), consulté le ${VERIFIED}.</p>
 <h2>Hébergeur</h2>
@@ -272,7 +272,7 @@ ${Object.values(PAYS).map(p => `<tr><td><a href="${p.url}" rel="noopener">France
     description: 'Données traitées par Pièces en ordre : mesure d’audience et de comportement anonyme et agrégée, sans cookie, tests A/B, e-mail laissé volontairement pour l’ouverture du Pack.',
     body: `
 <h1>Confidentialité</h1>
-<p class="lede">Responsable du traitement : READ FRANCE SAS, 11 rue Rouvet, 75019 Paris, <a href="mailto:octave@vread.fr">octave@vread.fr</a>.</p>
+<p class="lede">Responsable du traitement : READ FRANCE SAS, 11 rue Rouvet, 75019 Paris, <a href="mailto:contact@jalonel.com">contact@jalonel.com</a>.</p>
 <h2>Ce que nous ne collectons pas</h2>
 <p>Aucun document, aucun numéro de passeport, aucune date de naissance, aucun nom de voyageur. Les listes fonctionnent dans votre navigateur : les cases cochées sont gardées sur votre appareil (stockage local du navigateur) et ne nous sont jamais envoyées. Aucun cookie, aucun traceur publicitaire.</p>
 <h2>Mesure d’audience et de comportement, anonyme et agrégée</h2>
@@ -288,7 +288,7 @@ ${Object.values(PAYS).map(p => `<tr><td><a href="${p.url}" rel="noopener">France
 <h2>E-mail laissé pour l’ouverture du Pack</h2>
 <p>Si vous remplissez le formulaire de commande : e-mail, pays, motif, rôle (demandeur ou hôte), offre et prix affichés. Finalité : vous prévenir une fois de l’ouverture du paiement. Base légale : votre consentement, que vous pouvez retirer à tout moment. Conservation : 6 mois au plus. Destinataires : READ FRANCE SAS ; hébergement chez Google (Google Sheets), avec des transferts hors UE encadrés par les clauses contractuelles types de Google.</p>
 <h2>Vos droits</h2>
-<p>Accès, rectification, effacement, retrait du consentement, limitation, opposition : écrivez à <a href="mailto:octave@vread.fr">octave@vread.fr</a> depuis l’adresse concernée. Vous pouvez saisir la CNIL (cnil.fr).</p>
+<p>Accès, rectification, effacement, retrait du consentement, limitation, opposition : écrivez à <a href="mailto:contact@jalonel.com">contact@jalonel.com</a> depuis l’adresse concernée. Vous pouvez saisir la CNIL (cnil.fr).</p>
 `,
   });
 
@@ -309,7 +309,7 @@ ${Object.values(PAYS).map(p => `<tr><td><a href="${p.url}" rel="noopener">France
   <li>Vendeur : READ FRANCE SAS. Prix en euros, TVA non applicable (art. 293 B du CGI), payable en une fois par carte.</li>
   <li>Livraison : lien de téléchargement envoyé par e-mail après paiement.</li>
   <li>Droit de rétractation : contenu numérique fourni sans support matériel. En commandant, l’acheteur demande l’accès immédiat et reconnaît perdre son droit de rétractation dès le début du téléchargement (Code de la consommation, art. L221-28, 13°).</li>
-  <li>Si le fichier livré ne correspond pas au pays ou au motif commandé, écrivez à <a href="mailto:octave@vread.fr">octave@vread.fr</a> : nous envoyons le bon fichier ou nous remboursons.</li>
+  <li>Si le fichier livré ne correspond pas au pays ou au motif commandé, écrivez à <a href="mailto:contact@jalonel.com">contact@jalonel.com</a> : nous envoyons le bon fichier ou nous remboursons.</li>
   <li>Le Pack ne garantit pas la délivrance d’un visa ; un refus ne donne pas lieu à remboursement.</li>
 </ul>
 <p class="small">Aujourd’hui, le paiement n’est pas ouvert : la page de commande enregistre seulement, avec votre accord, l’e-mail à prévenir.</p>

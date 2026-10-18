@@ -12,7 +12,7 @@ const MESURE_V = crypto.createHash('sha256').update(fs.readFileSync(path.join(RO
 // cro.js (Octave behaviour counters + A/B framework), vendored byte-identical from octave-checkout/gas/web/cro.js.
 const CRO_V = crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, 'static/cro.js'))).digest('hex').slice(0, 8);
 const OUT = path.join(ROOT, 'docs');
-// Served at the root of its own Jalonel subdomain since 2026-10-16 (was https://outils.vread.fr/pieces-en-ordre/).
+// Served at the root of its own Jalonel subdomain since 2026-10-16.
 const BASE = '/';
 const ORIGIN = 'https://pieces-en-ordre.jalonel.com';
 // IndexNow key shared by the Jalonel sites, served at the site root (static/<key>.txt).
@@ -65,7 +65,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : ''}
 <link rel="stylesheet" href="${BASE}style.css">
 ${jsonld}
 <script>window.OCTAVE_XP=${JSON.stringify(OCTAVE_XP)};</script>
-<script src="${BASE}cro.js?v=${CRO_V}" data-site="pieces-en-ordre" data-api="${ENDPOINT}" data-hosts="pieces-en-ordre.jalonel.com outils.vread.fr" data-cta="[data-mesure=cta_click]" defer></script>
+<script src="${BASE}cro.js?v=${CRO_V}" data-site="pieces-en-ordre" data-api="${ENDPOINT}" data-hosts="pieces-en-ordre.jalonel.com" data-cta="[data-mesure=cta_click]" defer></script>
 </head>
 <body class="${pageClass}">
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -82,7 +82,7 @@ ${body}
 <footer class="foot">
   <div class="wrap">
     <p><strong>Pièces en ordre</strong> · <a href="https://jalonel.com/">Une marque Jalonel</a></p>
-    <p>Service de documentation en libre-service. Éditeur : READ FRANCE SAS (SIREN 988 741 773, 11 rue Rouvet, 75019 Paris). Contact : <a href="mailto:octave@vread.fr">octave@vread.fr</a>.</p>
+    <p>Service de documentation en libre-service. Éditeur : READ FRANCE SAS (SIREN 988 741 773, 11 rue Rouvet, 75019 Paris). Contact : <a href="mailto:contact@jalonel.com">contact@jalonel.com</a>.</p>
     <p>Service indépendant, non affilié aux autorités. Nous ne prenons pas de rendez-vous, ne déposons pas de dossier, ne vendons aucun créneau et ne représentons personne. Les informations ne constituent pas un conseil juridique : la consultation juridique rémunérée est réservée aux professions réglementées (loi n° 71-1130, art. 54). Seul le consulat décide.</p>
     <p class="foot-links"><a href="${BASE}mentions-legales/">Mentions légales</a><a href="${BASE}confidentialite/">Confidentialité (RGPD)</a><a href="${BASE}conditions/">Conditions et avertissement</a><a href="${BASE}sources/">Sources officielles</a><a href="${BASE}faux-documents/">Faux documents : les risques</a></p>
     <p class="small">Textes officiels cités : France-Visas (licence etalab-2.0), Service-public.fr, Légifrance, EUR-Lex. Dernière vérification : ${VERIFIED}. Mesure d’audience et de comportement anonyme et agrégée, sans cookie ni identifiant (<a href="${BASE}confidentialite/">détails</a>).</p>

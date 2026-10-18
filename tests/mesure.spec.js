@@ -44,7 +44,7 @@ test('mesure.js: bots, webdriver, octave_notrack and prerender are not visits', 
   r = run({ search: '?octave_notrack=0', store: { octave_notrack: '1' } });
   expect(r.sent.every((b) => !('excluded' in b)) && !('octave_notrack' in r.store)).toBe(true);
   expect(run({ dnt: '1' }).sent).toHaveLength(0);
-  expect(run({ hostname: 'outils.vread.fr' }).sent.map((b) => b.event)).toEqual(['view', 'pack_view']);
+  expect(run({ hostname: 'example.github.io' }).sent).toHaveLength(0);
   expect(run({ hostname: 'localhost' }).sent).toHaveLength(0);
   r = run({ prerendering: true });
   expect(r.sent).toHaveLength(0);
