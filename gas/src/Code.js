@@ -31,7 +31,7 @@ var APP = {
   adminHash: '7f32f5386d59fe764415d193e247fa972680c6fc8ab2db4446186bd6f049a140',
   sites: ['pieces-en-ordre'],
   events: ['view', 'cta_click', 'checklist_select', 'checklist_print', 'pack_view', 'order_view', 'order_submit', 'source_click'],
-  ownHosts: ['pieces-en-ordre.jalonel.com', 'outils.vread.fr', 'vread-corp.github.io'],
+  ownHosts: ['pieces-en-ordre.jalonel.com'],
   offers: { 'pack-19': 19, 'pack-29': 29 },
   roles: ['demandeur', 'hote', 'autre'],
   countries: ['ma', 'dz', 'tn', 'sn', 'ci', 'cm', 'autre'],

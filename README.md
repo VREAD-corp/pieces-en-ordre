@@ -12,5 +12,5 @@ Site : https://pieces-en-ordre.jalonel.com/
 - `npm test` : contrôles cro.js / Cro.js puis Playwright (390 et 1440 px) sur `docs/` servi à la racine
   (`scripts/serve.mjs`, port 4317) ; `npm run test:live` sur le site en ligne.
 - `gas/` : web app Apps Script autonome (compteurs d'audience sans cookie, formulaire d'intérêt Pack, droits RGPD) ;
-  `gas/scripts/deploy.sh` pousse le code et redéploie le même identifiant (`gas/.deployment.json`). `ownHosts` accepte
-  pieces-en-ordre.jalonel.com (anciens hôtes conservés, identifiant de site `pieces-en-ordre` inchangé).
+  `gas/scripts/deploy.sh` pousse le code et redéploie le même identifiant (`gas/.deployment.json`). `ownHosts` : pieces-en-ordre.jalonel.com
+  seulement (identifiant de site `pieces-en-ordre` inchangé). Le script n'envoie aucun e-mail.

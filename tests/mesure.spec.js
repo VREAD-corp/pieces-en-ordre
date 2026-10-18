@@ -63,3 +63,11 @@ test('mesure.js: the price variant comes from cro.js (octaveCro.v), never from a
   expect(run({ store: { po_v: 'b' } }).sent.every((b) => b.variant === '')).toBe(true);
   expect(run({ variant: 'zz' }).sent.every((b) => b.variant === '')).toBe(true);
 });
+
+test('backend names no Vread host or address and sends no e-mail', () => {
+  const code = fs.readFileSync(new URL('../gas/src/Code.js', import.meta.url), 'utf8');
+  expect(code.toLowerCase()).not.toContain('vread');
+  expect(code).toContain("ownHosts: ['pieces-en-ordre.jalonel.com'],");
+  // No MailApp/GmailApp: no reply-to to set. If one is ever added, it must reply to contact@jalonel.com.
+  expect(code).not.toMatch(/MailApp|GmailApp/);
+});
