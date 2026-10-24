@@ -1,5 +1,7 @@
 # Pièces en ordre
 
+**En pause depuis le 24/10/2026** (décision des fondateurs, recentrage Jalonel) : noindex, bandeau, demandes fermées ; tracking conservé.
+
 Checklists des pièces du dossier de visa France court séjour (Maroc, Algérie, Tunisie, Sénégal, Côte d'Ivoire,
 Cameroun ; visite familiale, tourisme, affaires, stage), reprises de l'Assistant visa France-Visas, avec la raison de
 chaque pièce. Une marque Jalonel (Jalonel est une marque de READ FRANCE SAS).

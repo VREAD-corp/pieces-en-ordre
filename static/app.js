@@ -38,6 +38,8 @@
 
   // Pack interest form (fake door: nothing is charged).
   var form = document.getElementById('octave-pay');
+  // Paused (2026-10-24): no new request is sent.
+  if (form && form.hasAttribute('data-paused')) { form.addEventListener('submit', function (e) { e.preventDefault(); }); form = null; }
   if (form) {
     var qs = new URLSearchParams(location.search);
     if (qs.get('pays') && form.country.querySelector('option[value="' + qs.get('pays') + '"]')) form.country.value = qs.get('pays');

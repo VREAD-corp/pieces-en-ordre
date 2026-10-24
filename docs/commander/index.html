@@ -23,6 +23,7 @@
 </head>
 <body class="order">
 <a class="skip" href="#contenu">Aller au contenu</a>
+<div class="jal-pause" role="note"><p>Ce service est en pause. Autres outils : <a href="https://jalonel.com/">jalonel.com</a></p></div>
 <header class="top">
   <div class="wrap top-in">
     <a class="brand" href="/"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 32 32"><path d="M3 9h10l3 3h13v15H3z" fill="#e9d8b4" stroke="#2f5d50" stroke-width="2"/><path d="M10 19l4 4 8-8" fill="none" stroke="#2f5d50" stroke-width="2.6"/></svg><span>Pièces en ordre</span></a>
@@ -36,7 +37,8 @@
 <div class="note-box">
   <p><b>Le paiement en ligne n’est pas encore ouvert.</b> Nous mesurons d’abord l’intérêt pour ce Pack avant d’ouvrir la caisse. Si vous laissez votre adresse, vous recevrez un seul e-mail, à l’ouverture, au prix affiché ici. Rien n’est débité aujourd’hui.</p>
 </div>
-<form id="octave-pay" class="order-form" data-section="formulaire" data-endpoint="https://script.google.com/macros/s/AKfycbxVSC6N6xawHiGLxzcpHX6lbtFlBX2LqPVzycqL4CRD8GbNXfACJIa27-NgEA7rloFt/exec" novalidate>
+<p class="pause-note">Les nouvelles demandes sont fermées pendant la pause.</p>
+<form id="octave-pay" class="order-form" data-section="formulaire" data-endpoint="https://script.google.com/macros/s/AKfycbxVSC6N6xawHiGLxzcpHX6lbtFlBX2LqPVzycqL4CRD8GbNXfACJIa27-NgEA7rloFt/exec" novalidate data-paused="1"><fieldset class="pause-fs" disabled>
   <label>Pays où la demande sera déposée<select name="country" required><option value="">Choisir</option><option value="ma">Maroc</option><option value="dz">Algérie</option><option value="tn">Tunisie</option><option value="sn">Sénégal</option><option value="ci">Côte d’Ivoire</option><option value="cm">Cameroun</option><option value="autre">Autre pays</option></select></label>
   <label>Motif du séjour<select name="purpose" required><option value="">Choisir</option><option value="famille">Visite familiale</option><option value="tourisme">Tourisme ou visite privée</option><option value="affaires">Voyage d’affaires</option><option value="stage">Stage ou formation courte</option></select></label>
   <fieldset><legend>Vous êtes</legend>
@@ -50,7 +52,7 @@
   <p>Ne saisissez aucun numéro de passeport ni aucune information sur votre dossier : nous n’en avons pas besoin.</p>
   <button class="btn" type="submit">Être prévenu à l’ouverture</button>
   <p class="form-msg" role="status" aria-live="polite"></p>
-</form>
+</fieldset></form>
 <p class="small">En attendant, les <a href="/#choisir">listes en ligne</a> sont gratuites et imprimables.</p>
 
 </main>

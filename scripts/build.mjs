@@ -43,7 +43,14 @@ export function src(keys) {
   return keys.map(k => SOURCES[k]).map(s => `<a href="${s.url}" rel="noopener" data-mesure="source_click">${esc(s.label)}</a>`).join(' ; ');
 }
 
+// Pause (founders' decision, 2026-10-24): every page noindex, a banner, the Pack interest form closed. Tracking unchanged.
+export const PAUSED = true;
+const PAUSE_BANNER = '<div class="jal-pause" role="note"><p>Ce service est en pause. Autres outils : <a href="https://jalonel.com/">jalonel.com</a></p></div>';
+const pauseForms = html => html.replace(/(<form id="octave-pay"[^>]*?)>([\s\S]*?)<\/form>/g, (all, open, inner) =>
+  `<p class="pause-note">Les nouvelles demandes sont fermées pendant la pause.</p>\n${open} data-paused="1"><fieldset class="pause-fs" disabled>${inner}</fieldset></form>`);
+
 function layout({ title, description, canonical, body, pageClass = '', noindex = false, jsonld = '' }) {
+  if (PAUSED) { noindex = true; body = pauseForms(body); }
   return typo(`<!doctype html>
 <html lang="fr">
 <head>
@@ -69,6 +76,7 @@ ${jsonld}
 </head>
 <body class="${pageClass}">
 <a class="skip" href="#contenu">Aller au contenu</a>
+${PAUSED ? PAUSE_BANNER : ''}
 <header class="top">
   <div class="wrap top-in">
     <a class="brand" href="${BASE}"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 32 32"><path d="M3 9h10l3 3h13v15H3z" fill="#e9d8b4" stroke="#2f5d50" stroke-width="2"/><path d="M10 19l4 4 8-8" fill="none" stroke="#2f5d50" stroke-width="2.6"/></svg><span>Pièces en ordre</span></a>

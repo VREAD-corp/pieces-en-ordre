@@ -130,36 +130,29 @@ test('pack page shows real PDF pages and limits', async ({ page }) => {
   await noHScroll(page);
 });
 
-test('order page is an honest fake door: validation, consent, no passport data', async ({ page }) => {
-  let posted = null;
+test('paused (2026-10-24): every page noindex with the banner; the order form accepts no new request', async ({ page }) => {
+  const docs = new URL('../docs/', import.meta.url).pathname;
+  for (const f of fs.readdirSync(docs, { recursive: true }).filter((f) => f.endsWith('.html'))) {
+    const html = fs.readFileSync(docs + f, 'utf8');
+    expect((html.match(/<meta name="robots"/g) || []).length, f).toBe(1);
+    expect(html, f).toContain('<meta name="robots" content="noindex">');
+    expect(html, f).toContain('<div class="jal-pause" role="note">');
+  }
+  let posted = 0;
   if (!LIVE) await page.route(/script\.google\.com\/macros/, async route => {
-    const body = route.request().postData() || '';
-    if (body.includes('"preorder"')) { posted = JSON.parse(body); return route.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true,"updated":false}' }); }
+    if ((route.request().postData() || '').includes('"preorder"')) posted++;
     return route.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true}' });
   });
-  await page.goto('commander/?pays=dz&motif=famille&role=hote&octave_notrack=1' + (LIVE ? '&utm_medium=e2e-test' : ''));
-  await expect(page.locator('.note-box')).toContainText('Le paiement en ligne n’est pas encore ouvert');
-  await expect(page.locator('select[name=country]')).toHaveValue('dz');
-  await expect(page.locator('input[name=role][value=hote]')).toBeChecked();
-  await expect(page.locator('form input[name*=passport i]')).toHaveCount(0);
-  await page.fill('input[name=email]', 'pas-un-email');
-  await page.click('#octave-pay button[type=submit]');
-  await expect(page.locator('.form-msg')).toContainText('adresse e-mail');
-  const email = `e2e-${Date.now()}@example.com`;
-  await page.fill('input[name=email]', email);
-  await page.click('#octave-pay button[type=submit]');
-  await expect(page.locator('.form-msg')).toContainText('Cochez la case');
-  await page.check('input[name=consent]');
-  await page.click('#octave-pay button[type=submit]');
-  await expect(page.locator('.form-msg')).toContainText('Rien n’a été débité', { timeout: 30000 });
-  // cro.js goal: the successful pre-order counts once per tab for the price experiment (nothing is sent under octave_notrack=1).
-  expect(await page.evaluate(() => sessionStorage.getItem('oxp_price_preorder'))).toBe('1');
-  if (!LIVE) {
-    expect(posted).toMatchObject({ action: 'preorder', email, country: 'dz', purpose: 'famille', role: 'hote', consent: true });
-    expect(['a', 'b']).toContain(posted.variant);
-    expect(posted.offer).toBe(posted.variant === 'b' ? 'pack-29' : 'pack-19');
-    await expect(page.locator('.form-msg')).toContainText(posted.variant === 'b' ? '29 €' : '19 €');
-  }
+  await page.goto('commander/?pays=dz&motif=famille&octave_notrack=1');
+  await expect(page.locator('.jal-pause')).toContainText('Ce service est en pause');
+  await expect(page.locator('.pause-note')).toContainText('Les nouvelles demandes sont fermées');
+  await expect(page.locator('#octave-pay fieldset.pause-fs')).toHaveAttribute('disabled', '');
+  await expect(page.locator('#octave-pay input[name=email]')).toBeDisabled();
+  await expect(page.locator('#octave-pay button[type=submit]')).toBeDisabled();
+  await page.evaluate(() => document.getElementById('octave-pay').requestSubmit());
+  await page.waitForTimeout(500);
+  expect(posted).toBe(0);
+  await expect(page.locator('.form-msg')).toHaveText('');
 });
 
 test('refusal page: official grounds and procedure, no appeal template', async ({ page }) => {
